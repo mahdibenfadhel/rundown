@@ -1,0 +1,66 @@
+@import "~src/styles";
+.container{
+  margin-top: 100px !important;
+}
+h1{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xxl;
+  font-weight: 700;
+  margin: 10px;
+text-decoration: underline;
+}
+h2{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xl;
+  font-weight: 500;
+  margin: 0;
+}
+.container{
+  margin: auto;
+}
+.bg-chart-primary{
+  background-color: $light-grey;
+  color: $dark-blue;
+  font-size: $font-xs;
+}
+.bg-chart-secondary{
+  background-color: #BFDBF7;
+  color: #1E2E50;
+}
+.row .col-md div{
+  margin: 5px;
+  border-radius: 6px;
+  line-height: 10px;
+  padding: 5px;
+}
+h3{
+  margin: 0 ;
+  font-size: $font-sm;
+  text-decoration: underline;
+  text-align: left;
+}
+.bg-green{
+  background-color: $green;
+}
+
+.order{
+  display: none;
+}
+.card{
+  border: 1px solid $dark-blue !important;
+}
+.card:hover, .card:focus{
+  background-color: $dark-blue;
+  h1, .date, .alert-msg{
+    color: $white;
+  }
+  .order{
+    display: block;
+  }
+}
+
+.bg-transparent{
+  border: 1px solid $white;
+}

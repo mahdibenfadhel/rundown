@@ -1,0 +1,115 @@
+@import "~src/styles";
+.card{
+  padding: 5px;
+}
+.container{
+  margin-top: 100px !important;
+}
+h1{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xxl;
+  font-weight: 700;
+  margin: 10px;
+  text-decoration: underline;
+}
+h2{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xl;
+  font-weight: 500;
+  margin: 0;
+}
+.container{
+  margin: auto;
+}
+.bg-dark-blue{
+  background-color: $dark-blue;
+  color: $white;
+  font-size: $font-sm;
+  text-align: center;
+}
+.bg-chart-secondary{
+  background-color: $lightest-blue;
+  color: $dark-blue;
+  width: 100%;
+}
+.bg-chart-secondary2{
+  background-color: $light-grey;
+  color: $dark-blue;
+  font-size: $font-md;
+
+}
+.row .col-md div{
+  margin: 5px;
+  border-radius: 6px;
+  line-height: 10px;
+  padding: 5px;
+}
+h3{
+  margin: 0 ;
+  font-size: $font-sm;
+  text-decoration: underline;
+  text-align: left;
+}
+.bg-green{
+  background-color: $green;
+  h1{
+    color: $white;
+text-decoration: none;
+    font-size: $font-xl;
+    margin: 5px !important;
+  }
+}
+.bg-red{
+  background-color: $red;
+  h1{
+    color: $white;
+    text-decoration: none;
+    font-size: $font-xl;
+    margin: 5px !important;
+  }
+}
+
+.order{
+  display: none;
+}
+.card{
+  border: 1px solid $dark-blue !important;
+}
+.bg-transparent{
+  border: 1px solid $white;
+}
+.line-height-normal{
+  line-height: normal;
+  font-weight: 700;
+}
+.flex{
+  display: flex;
+  place-content: space-between;
+}
+.bg-chart-primary{
+  background-color: $light-grey;
+  color: $dark-blue;
+  font-size: $font-xs;
+}
+.alert-msg{
+  margin-left: auto;
+}
+.detail{
+  margin-left: 150px;
+  h2{
+    font-weight: 700;
+  }
+}
+table{
+  width: 100%;
+}
+td {
+  border-top: 1px solid $dark-blue;
+  border-bottom: 1px solid $dark-blue;
+  padding: 15px 0;
+  color: $dark-blue;
+  font-size: $font-md;
+}
+

@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/styles/fonts.scss";
+@import "~src/assets/styles/colors.scss";
+
+
+// Font size
+$font-xs:10px;
+$font-sm: 12px;
+$primary-fs: 14px;
+$font-md: 18px;
+$font-lg: 20px;
+$font-xl: 40px;
+$font-xxl: 50px;
+
+html, body { height: 100%; }
+body { margin: 0;
+  :host {
+    font-family: 'Poppins', sans-serif;
+    font-size: $primary-fs;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
