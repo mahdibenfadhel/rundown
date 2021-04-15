@@ -1,0 +1,217 @@
+@import "~src/styles";
+.card{
+  padding: 5px;
+}
+.container{
+  margin-top: 100px !important;
+}
+h1{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xxl;
+  font-weight: 700;
+  margin: 10px;
+  text-decoration: underline;
+}
+h2{
+  color: $dark-blue;
+  font-family: 'Poppins', sans-serif;
+  font-size: $font-xl;
+  font-weight: 500;
+  margin: 0;
+}
+.container{
+  margin: auto;
+}
+.bg-dark-blue{
+  background-color: $dark-blue;
+  color: $white;
+  font-size: $font-sm;
+  text-align: center;
+  h2{
+    font-size: $font-lgg;
+    color: $white;
+    font-weight: 800;
+  }
+  p{
+    font-size: $font-md;
+  }
+}
+.bg-chart-secondary{
+  background-color: $lightest-blue;
+  color: $dark-blue;
+  font-size: $font-xs;
+  height: 100%;
+  h2{
+    margin: 15px;
+  }
+}
+.bg-chart-secondary2{
+  background-color: $light-grey;
+  color: $dark-blue;
+  font-size: $font-md;
+
+}
+.row .col-md div{
+  margin: 5px;
+  border-radius: 6px;
+  line-height: 10px;
+  padding: 5px;
+}
+h3{
+  margin: 0 ;
+  font-size: $font-sm;
+  text-decoration: underline;
+  text-align: left;
+}
+.bg-green{
+  height: 50px;
+  background-color: $green;
+  border-radius: 6px;
+  h1{
+    color: $white;
+    text-decoration: none;
+    font-size: $font-xl;
+    padding: 7px;
+  }
+  h2, p{
+    color: $white;
+    font-size: $font-lg;
+  }
+}
+.bg-light-green{
+  background-color: $light-green;
+  border-radius: 6px;
+  p{
+    color: $dark-blue;
+    text-decoration: none;
+    font-size: $font-md;
+    text-align: left;
+  }
+  h2{
+    color: $dark-blue;
+    font-size: $font-lg;
+    text-align: left;
+  }
+}
+.bg-red{
+  background-color: $red;
+  border-radius: 6px;
+  h1{
+    color: $white;
+    text-decoration: none;
+    font-size: $font-xl;
+    margin: 5px !important;
+  }
+  h2, p{
+    color: $white;
+  }
+}
+
+.order{
+  display: none;
+}
+.card{
+  border: 1px solid $dark-blue !important;
+}
+.bg-transparent{
+  border: 1px solid $white;
+}
+.line-height-normal{
+  line-height: normal;
+  font-weight: 700;
+}
+.flex{
+  display: flex;
+  place-content: space-between;
+}
+.bg-chart-primary{
+  background-color: $light-grey;
+  color: $dark-blue;
+  h2{
+    font-size: $font-md;
+    text-align: left;
+    font-weight: 600;
+
+  }
+  p{
+    font-size: $font-sm;
+    text-align: left;
+  }
+}
+.alert-msg{
+  margin-left: auto;
+}
+.detail{
+  .card{
+    background-color: $dark-blue;
+    padding: 15px!important;
+    border-radius: 0 !important;
+  }
+  hr{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid $white;
+  }
+  p{
+    font-weight: 100;
+  }
+  h2, p{
+    color: $white;
+    line-height: normal;
+  }
+}
+
+td, th {
+  width: 70px;
+  text-align: center;
+  border: 1px solid $dark-blue;
+  padding: 15px 0;
+  color: $dark-blue;
+  font-size: $font-md;
+}
+th:hover{
+  background-color: $dark-blue;
+  color: $white;
+}
+.desc{
+  text-decoration: underline;
+  float: right;
+  mat-icon{
+    font-size: $font-md;
+  }
+}
+.rotate-180{
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  display: inline-block;
+}
+button{
+  margin: 0 5px 100px 0;
+  width: 200px;
+  color: $white;
+  float: right;
+}
+.bg-red-btn{
+  background-color: $red;
+}
+.bg-dark-blue-btn{
+  background-color: $dark-blue;
+}
+.col-md-10 .row div{
+  padding: 3px;
+  border-radius: 6px;
+}
+.card:hover{
+  background-color: $dark-blue;
+  h1, .date{
+    color: $white;
+  }
+  .bg-dark-blue{
+    border: solid 1px $white;
+  }
+}

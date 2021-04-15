@@ -16,6 +16,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { CardDetailsComponent } from './pages/home/card-details/card-details.component';
 import { OrderComponent } from './pages/home/order/order.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     FooterComponent,
     CardDetailsComponent,
-    OrderComponent
+    OrderComponent,
+    AlarmBlotterComponent
   ],
   imports: [
     BrowserModule,

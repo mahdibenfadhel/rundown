@@ -67,6 +67,7 @@ h3{
   }
   h2, p{
     color: $white;
+    font-size: $font-lg;
   }
 }
 .bg-red{
@@ -131,15 +132,18 @@ h3{
     line-height: normal;
   }
 }
-table{
-  width: 100%;
-}
-td {
-  border-top: 1px solid $dark-blue;
-  border-bottom: 1px solid $dark-blue;
+
+td, th {
+  width: 70px;
+  text-align: center;
+  border: 1px solid $dark-blue;
   padding: 15px 0;
   color: $dark-blue;
   font-size: $font-md;
+}
+th:hover{
+  background-color: $dark-blue;
+  color: $white;
 }
 .desc{
   text-decoration: underline;
@@ -155,4 +159,16 @@ td {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   display: inline-block;
+}
+button{
+  margin: 0 5px 100px 0;
+  width: 200px;
+  color: $white;
+  float: right;
+}
+.bg-red-btn{
+  background-color: $red;
+}
+.bg-dark-blue-btn{
+  background-color: $dark-blue;
 }
