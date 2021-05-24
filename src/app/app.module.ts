@@ -17,6 +17,8 @@ import { CardDetailsComponent } from './pages/home/card-details/card-details.com
 import { OrderComponent } from './pages/home/order/order.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.component';
+import {AuctionService} from "./common/services/auction.service";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.compone
     AlarmBlotterComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -42,7 +45,7 @@ import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.compone
     FontAwesomeModule,
     CollapseModule.forRoot(),
   ],
-  providers: [],
+  providers: [AuctionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

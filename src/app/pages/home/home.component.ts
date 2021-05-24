@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuctionService} from "../../common/services/auction.service";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+auctions;
+  constructor(private auctionService: AuctionService) { }
 
   ngOnInit(): void {
+    this.auctionService.getAuctions().subscribe(res => {
+this.auctions = res;
+    })
   }
 
 }
