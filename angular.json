@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "rundown"
+  "defaultProject": "rundown",
+  "cli": {
+    "analytics": "f60a1253-7015-4a3a-ba9d-e1436f9921d0"
+  }
 }

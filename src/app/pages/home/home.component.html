@@ -1,50 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let auction of auctions" class="col-md-2 pl-1 pr-1 pb-1">
-      <div class="card text-center">
-        <div class="card-content">
-          <div class="row">
-            <div class="col">
-              <h1>{{auction.currency}}</h1>
-              <h2 class="date">{{auction.rate_start | date: 'MMM-dd'}}</h2>
+<div class="content" role="main">
+  <app-header></app-header>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let auction of auctions" class="col-md-2 pl-1 pr-1 pb-1">
+        <div (click)="navigateToDetail()" class="card text-center">
+          <div class="card-content">
+            <div class="row">
+              <div class="col">
+                <h1>{{auction.currency}}</h1>
+                <h2 class="date">{{auction.rate_start | date: 'MMM-dd'}}</h2>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md">
-              <div class="bg-chart-primary">
-                <h3>Next auction</h3>
-                <p class="float-left">{{auction.auction_cutoff | date: 'dd-MMM-yyyy'}}</p>
-                <p class="float-right">{{auction.auction_cutoff | date: 'h:mm a'}}</p>
-                <br>
+            <div class="row">
+              <div class="col-md">
+                <div class="bg-chart-primary">
+                  <h3>Next auction</h3>
+                  <p class="float-left">{{auction.auction_cutoff | date: 'dd-MMM-yyyy'}}</p>
+                  <p class="float-right">{{auction.auction_cutoff | date: 'h:mm a'}}</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                <div class="bg-chart-secondary">
+                  <h2>{{auction.rate_mid}}</h2>
+                  <p class="m-0 p-0">mid</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md order">
+                <div class="bg-green text-white ">
+                  <p class="m-0 pt-2 pb-2">Leave order</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md order">
+                <div class="bg-transparent text-white ">
+                  <p class="m-0 pt-2 pb-2">Limit order</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md">
-              <div class="bg-chart-secondary">
-                <h2>{{auction.rate_mid}}</h2>
-                <p class="m-0 p-0">mid</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md order">
-              <div class="bg-green text-white ">
-                <p class="m-0 pt-2 pb-2">Leave order</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md order">
-              <div class="bg-transparent text-white ">
-                <p class="m-0 pt-2 pb-2">Limit order</p>
-              </div>
-            </div>
-          </div>
+          <div class="card-header p-0"></div>
         </div>
-        <div class="card-header p-0"></div>
       </div>
-    </div>
 
+    </div>
   </div>
+  <app-footer></app-footer>
 </div>
+
+

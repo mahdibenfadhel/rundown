@@ -1,88 +1,94 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card text-center">
-      <div class="card-content">
-        <div class="row">
-          <div class="col">
-            <h1>MPC</h1>
-            <h2 class="date">DEC-20</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md">
-            <div class="bg-dark-blue">
-              <div class="row">
-                <div class="col-md m-0 p-0">
-                  <p class="line-height-normal m-0 p-0">Time to Rundown Auction</p>
-                </div>
-                <div class="col-md m-0 p-0">
-                  <div class="bg-chart-secondary2">
-                  <p class="m-3">09:58s</p>
+<div class="content" role="main">
+  <app-header></app-header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card text-center">
+          <div class="card-content">
+            <div class="row">
+              <div class="col">
+                <h1>MPC</h1>
+                <h2 class="date">DEC-20</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md">
+                <div class="bg-dark-blue">
+                  <div class="row">
+                    <div class="col-md m-0 p-0">
+                      <p class="line-height-normal m-0 p-0">Time to Rundown Auction</p>
+                    </div>
+                    <div class="col-md m-0 p-0">
+                      <div class="bg-chart-secondary2">
+                        <p class="m-3">09:58s</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md flex">
-            <div class="bg-green"><h1>R</h1></div>
-            <div class="bg-chart-secondary">
-              <h2>4.05</h2>
-              <p class="m-0 p-0">mid</p>
+            <div class="row">
+              <div class="col-md flex">
+                <div class="bg-green"><h1>R</h1></div>
+                <div class="bg-chart-secondary">
+                  <h2>4.05</h2>
+                  <p class="m-0 p-0">mid</p>
+                </div>
+                <div class="bg-red"><h1>P</h1></div>
+              </div>
             </div>
-            <div class="bg-red"><h1>P</h1></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md">
-            <div class="bg-chart-primary">
-              <h3><b>GBP DEC MPC DATES</b></h3>
-              <p class="float-left">10-mar-2021 - 10-mar-2021</p>
-              <br>
+            <div class="row">
+              <div class="col-md">
+                <div class="bg-chart-primary">
+                  <h3><b>GBP DEC MPC DATES</b></h3>
+                  <p class="float-left">10-mar-2021 - 10-mar-2021</p>
+                  <br>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md flex">
+                <p class="alert-msg">Alert Me</p><mat-slide-toggle class="mx-4"></mat-slide-toggle>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md flex">
-            <p class="alert-msg">Alert Me</p><mat-slide-toggle class="mx-4"></mat-slide-toggle>
-          </div>
+          <div class="card-header p-0"></div>
         </div>
       </div>
-      <div class="card-header p-0"></div>
-    </div>
-    </div>
-    <div class="col-md detail">
-      <h2 class="mb-4">Parameters(MPC, first trade below)</h2>
-      <table>
-        <tbody>
-        <tr>
-          <td><b>Start Date:</b></td>
-          <td>18 Mar 2021</td>
-        </tr>
-        <tr>
-          <td><b>End Date:</b></td>
-          <td>20 Mar 2022</td>
-        </tr>
-        <tr>
-          <td><b>Currency:</b></td>
-          <td>GBP</td>
-        </tr>
-        <tr>
-          <td><b>Cleared:</b></td>
-          <td>LCH</td>
-        </tr>
-        <tr>
-          <td><b>Fixed Leg:</b></td>
-          <td>IT ACT/365.FIXED</td>
-        </tr>
-        <tr>
-          <td><b>Floating Leg:</b></td>
-          <td>IT Sonia-Compound</td>
-        </tr>
-        </tbody>
-      </table>
+      <div class="col-md detail">
+        <h2 class="mb-4">Parameters(MPC, first trade below)</h2>
+        <table>
+          <tbody>
+          <tr>
+            <td><b>Start Date:</b></td>
+            <td>18 Mar 2021</td>
+          </tr>
+          <tr>
+            <td><b>End Date:</b></td>
+            <td>20 Mar 2022</td>
+          </tr>
+          <tr>
+            <td><b>Currency:</b></td>
+            <td>GBP</td>
+          </tr>
+          <tr>
+            <td><b>Cleared:</b></td>
+            <td>LCH</td>
+          </tr>
+          <tr>
+            <td><b>Fixed Leg:</b></td>
+            <td>IT ACT/365.FIXED</td>
+          </tr>
+          <tr>
+            <td><b>Floating Leg:</b></td>
+            <td>IT Sonia-Compound</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>
+
+

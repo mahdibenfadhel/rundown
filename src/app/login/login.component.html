@@ -1,1 +1,41 @@
-<p>login works!</p>
+  <div class="container">
+    <div class="card">
+      <div class="card-title"> <h2>
+        <ul class="navbar-nav ">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/login">Login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item " routerLinkActive="active">
+            <a class="nav-link" routerLink="/sign-up">Sign Up <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </h2> </div>
+      <div class="card-content">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Email: </h4>
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="Email" formControlName="login">
+            <mat-icon matSuffix *ngIf="loginForm.get('login').errors && loginForm.get('login').touched">error</mat-icon>
+            <mat-error  *ngIf="loginForm.get('login').errors && loginForm.get('login').touched">something is wrong</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12">
+          <h4>Password: </h4>
+          <mat-form-field appearance="outline">
+            <input type="password" matInput placeholder="Password" formControlName="password">
+            <mat-icon matSuffix *ngIf="loginForm.get('password').errors && loginForm.get('password').touched">error</mat-icon>
+            <mat-error  *ngIf="loginForm.get('password').errors && loginForm.get('password').touched">something is wrong</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-12 text-align-center">
+          <button mat-button type="submit">login</button>
+        </div>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+

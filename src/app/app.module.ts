@@ -19,6 +19,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.component';
 import {AuctionService} from "./common/services/auction.service";
 import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -32,7 +39,9 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     CardDetailsComponent,
     OrderComponent,
-    AlarmBlotterComponent
+    AlarmBlotterComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     HttpClientModule,
@@ -43,7 +52,14 @@ import {HttpClientModule} from "@angular/common/http";
     MatIconModule,
     MatSlideToggleModule,
     FontAwesomeModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    FormsModule,
     CollapseModule.forRoot(),
+
   ],
   providers: [AuctionService],
   bootstrap: [AppComponent]

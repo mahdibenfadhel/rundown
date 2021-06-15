@@ -1,0 +1,55 @@
+@import "src/styles";
+.card{
+  margin: 10% 0;
+
+  .card-content{
+    margin: 30px;
+    *{
+      width: 100%;
+    }
+  }
+
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+  border-radius:  0 20px 20px 0 !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+  border-radius:  20px 0 0 20px !important;
+  width: 20px!important;
+}
+.active a{
+text-decoration: underline;
+  color: $blue !important;
+}
+h2 ul li a{
+  color: $light-blue;
+  margin-left: 50px;
+}
+ul {
+  display: table-cell;
+
+  li {
+    display: table-cell;
+    height: 100px;
+    list-style-type: none;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}
+mat-icon{
+  color: $red;
+}
+mat-error{
+  text-align: end;
+}
+button, button:hover{
+    border: black 1px solid;
+  border-radius: 20px;
+  width: 100px!important;
+}
+button:focus{
+  outline: none;
+}
+.text-align-center{
+  text-align: center;
+}
