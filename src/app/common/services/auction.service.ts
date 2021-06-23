@@ -16,4 +16,7 @@ export class AuctionService {
   getOrders(): Observable<any> {
     return this.apiService.get('order');
   }
+  CreateOrder(auctionId, order): Observable<any> {
+    return this.apiService.post('order/'+ auctionId, order);
+  }
 }

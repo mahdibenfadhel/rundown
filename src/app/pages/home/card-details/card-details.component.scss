@@ -54,6 +54,7 @@ h3{
 }
 .bg-green{
   background-color: $green;
+  cursor: pointer;
   h1{
     color: $white;
 text-decoration: none;
@@ -63,6 +64,7 @@ text-decoration: none;
 }
 .bg-red{
   background-color: $red;
+  cursor: pointer;
   h1{
     color: $white;
     text-decoration: none;
@@ -112,4 +114,15 @@ td {
   color: $dark-blue;
   font-size: $font-md;
 }
-
+.rate{
+  width: inherit;
+  background-color:  $lightest-blue;
+  color: $dark-blue;
+  font-size: $font-lg;
+  font-weight: 900;
+  text-align: center;
+}
+input, input:focus, textarea:focus, select:focus{
+  outline: none;
+  border: none;
+}

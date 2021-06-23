@@ -29,12 +29,12 @@
             </div>
             <div class="row">
               <div class="col-md flex">
-                <div class="bg-green"><h1>R</h1></div>
+                <div class="bg-green" (click)="saveOrder('rec')"><h1>R</h1></div>
                 <div class="bg-chart-secondary">
-                  <h2>4.05</h2>
+                  <input type="number" class="rate" [(ngModel)]="rate">
                   <p class="m-0 p-0">mid</p>
                 </div>
-                <div class="bg-red"><h1>P</h1></div>
+                <div class="bg-red" (click)="saveOrder('pay')"><h1>P</h1></div>
               </div>
             </div>
             <div class="row">
@@ -48,7 +48,7 @@
             </div>
             <div class="row">
               <div class="col-md flex">
-                <p class="alert-msg">Alert Me</p><mat-slide-toggle class="mx-4"></mat-slide-toggle>
+                <p class="alert-msg">Alert Me</p><mat-slide-toggle class="mx-4" [(ngModel)]="alert"></mat-slide-toggle>
               </div>
             </div>
           </div>

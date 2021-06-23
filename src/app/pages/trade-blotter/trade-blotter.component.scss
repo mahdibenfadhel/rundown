@@ -95,13 +95,14 @@ h3{
   }
 }
 .bg-red{
+  height: 50px;
   background-color: $red;
   border-radius: 6px;
   h1{
     color: $white;
     text-decoration: none;
     font-size: $font-xl;
-    margin: 5px !important;
+    padding: 7px;
   }
   h2, p{
     color: $white;

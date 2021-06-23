@@ -29,8 +29,11 @@
               <div class="col-md-2">
                 <h1>{{order.auction.currency}}</h1>
                 <h2 class="date">{{order.auction.rate_start | date: 'MMM'}}</h2>
-                <div class="bg-green">
+                <div class="bg-green" *ngIf="order.direction === 'rec'">
                   <h1>R</h1>
+                </div>
+                <div class="bg-red" *ngIf="order.direction === 'pay'">
+                  <h1>P</h1>
                 </div>
               </div>
               <div class="col-md-10">
@@ -68,7 +71,7 @@
                 <div class="row">
                   <div class="col-md-2">
                     <div class="bg-chart-secondary">
-                      <h2>{{order.auction.rate_mid}}</h2>
+                      <h2>{{order.rate}}</h2>
                     </div>
                   </div>
                   <div class="col-md-2">

@@ -16,19 +16,19 @@
           </table>
         </div>
       </div>
-      <div class="col-md">
+      <div class  ="col-md">
         <button class="btn bg-red-btn">Cancel all Alerts </button>
         <button class="btn bg-dark-blue-btn">See all Orders</button>
       </div>
     </div>
     <div class="row">
       <div class="col-md"></div>
-      <div class="col-md-3">
+      <div *ngFor="let a of alarms" class="col-md-3">
         <div class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">
-                <h1>MPC</h1>
+                <h1>{{a.auction.currency}}</h1>
                 <h2 class="date">DEC-20</h2>
               </div>
             </div>
@@ -45,7 +45,7 @@
                   <div class="col-md p-0 m-0">
                     <div class="bg-dark-blue">
                       <p class="m-0 p-0">current: </p>
-                      <h2><b>4.05</b></h2>
+                      <h2><b>{{a.auction.rate_mid}}</b></h2>
                     </div>
                   </div>
                 </div>
@@ -55,15 +55,19 @@
                       <h2>set:</h2>
                     </div>
                   </div>
-                  <div class="col-md p-0 m-0">
+                  <div *ngIf="a.direction ==='rec'" class="col-md p-0 m-0">
                     <div class="bg-green">
-                      <h2>4.05</h2>
+                      <h2>{{a.rate}}</h2>
+                    </div>
+                  </div><div *ngIf="a.direction ==='pay'" class="col-md p-0 m-0">
+                    <div class="bg-red">
+                      <h2>{{a.rate}}</h2>
                     </div>
                   </div>
                 </div>
 
               </div>
-              <div class="col-md-3 ml-0 pl-0 mr-1">
+              <div *ngIf="a.direction ==='rec'" class="col-md-3 ml-0 pl-0 mr-1">
                 <div class="bg-green py-3">
                   <svg xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
                     <g id="up-arrow_1_" data-name="up-arrow (1)" transform="translate(45.877 73.551) rotate(180)">
@@ -80,116 +84,9 @@
 
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="card-header p-0"></div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card text-center">
-          <div class="card-content">
-            <div class="row">
-              <div class="col">
-                <h1>MPC</h1>
-                <h2 class="date">DEC-20</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                <div class="bg-red">
-                  <h2><b>ALARM</b></h2>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md mr-0 pr-0">
-                <div class="row p-0 m-0">
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-dark-blue">
-                      <p class="m-0 p-0">current: </p>
-                      <h2><b>4.05</b></h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row p-0 m-0">
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-chart-primary">
-                      <h2>set:</h2>
-                    </div>
-                  </div>
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-green">
-                      <h2>4.05</h2>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-3 ml-0 pl-0 mr-1">
-                <div class="bg-green py-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
-                    <g id="up-arrow_1_" data-name="up-arrow (1)" transform="translate(45.877 73.551) rotate(180)">
-                      <g id="Groupe_1118" data-name="Groupe 1118" transform="translate(0)">
-                        <g id="Groupe_1117" data-name="Groupe 1117">
-                          <path id="Tracé_1900" data-name="Tracé 1900" d="M45.339,32.033,24.058,52.866a1.456,1.456,0,0,1-2.24,0L.538,32.033a1.68,1.68,0,0,1,1.12-2.912h10.08V2.128A2.576,2.576,0,0,1,13.978,0H31.9c.9,0,1.12,1.12,1.12,2.128V29.121h11.2a1.68,1.68,0,0,1,1.12,2.912Z" transform="translate(0 20.16)" fill="#fff"/>
-                          <path id="Tracé_1901" data-name="Tracé 1901" d="M19.6,3.36H1.68A1.68,1.68,0,1,1,1.68,0H19.6a1.68,1.68,0,1,1,0,3.36Z" transform="translate(12.298 13.44)" fill="#fff"/>
-                          <path id="Tracé_1902" data-name="Tracé 1902" d="M19.6,3.36H1.68A1.68,1.68,0,1,1,1.68,0H19.6a1.68,1.68,0,1,1,0,3.36Z" transform="translate(12.298 6.72)" fill="#fff"/>
-                          <path id="Tracé_1903" data-name="Tracé 1903" d="M19.6,3.36H1.68A1.68,1.68,0,0,1,1.68,0H19.6a1.68,1.68,0,0,1,0,3.36Z" transform="translate(12.298)" fill="#fff"/>
-                        </g>
-                      </g>
-                    </g>
-                  </svg>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-header p-0"></div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card text-center">
-          <div class="card-content">
-            <div class="row">
-              <div class="col">
-                <h1>MPC</h1>
-                <h2 class="date">DEC-20</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md">
-                <div class="bg-red">
-                  <h2><b>ALARM</b></h2>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md mr-0 pr-0">
-                <div class="row p-0 m-0">
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-dark-blue">
-                      <p class="m-0 p-0">current: </p>
-                      <h2><b>4.05</b></h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row p-0 m-0">
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-chart-primary">
-                      <h2>set:</h2>
-                    </div>
-                  </div>
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-green">
-                      <h2>4.05</h2>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="col-md-3 ml-0 pl-0 mr-1">
-                <div class="bg-green py-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
+              <div *ngIf="a.direction ==='pay'" class="col-md-3 ml-0 pl-0 mr-1">
+                <div class="bg-red py-3">
+                  <svg class="rotate-180" xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
                     <g id="up-arrow_1_" data-name="up-arrow (1)" transform="translate(45.877 73.551) rotate(180)">
                       <g id="Groupe_1118" data-name="Groupe 1118" transform="translate(0)">
                         <g id="Groupe_1117" data-name="Groupe 1117">
