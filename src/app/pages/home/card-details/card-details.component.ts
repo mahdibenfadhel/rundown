@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class CardDetailsComponent implements OnInit {
 rate;
-alert;
+alert = false;
   constructor(private auctionService: AuctionService,
               private router: Router) { }
 
