@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div *ngFor="let auction of auctions" class="col-md-2 pl-1 pr-1 pb-1">
-        <div (click)="navigateToDetail()" class="card text-center">
+        <div class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
               <div class="col-md order">
-                <div class="bg-green text-white ">
+                <div class="bg-green text-white "  (click)="navigateToDetail()">
                   <p class="m-0 pt-2 pb-2">Leave order</p>
                 </div>
               </div>
