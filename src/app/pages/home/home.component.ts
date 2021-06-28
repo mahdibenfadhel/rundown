@@ -14,9 +14,13 @@ auctions;
   ngOnInit(): void {
     this.auctionService.getAuctions().subscribe(res => {
 this.auctions = res;
+console.log(this.auctions)
     })
   }
   navigateToDetail(){
 this.router.navigate(['/details'])
+  }
+  navigateToOrder(){
+this.router.navigate(['/order'])
   }
 }

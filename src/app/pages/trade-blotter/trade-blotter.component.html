@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="col-md">
-        <button class="btn bg-red-btn">Cancel all Alerts </button>
-        <button class="btn bg-dark-blue-btn">See all Orders</button>
+        <button class="btn bg-red-btn" (click)="deleteAll()">Cancel all Alerts </button>
+        <button class="btn bg-dark-blue-btn" (click)="goToAlarms()">See all Orders</button>
       </div>
     </div>
     <div *ngFor="let order of orders" class="row mb-2">

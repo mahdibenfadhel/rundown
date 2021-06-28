@@ -17,14 +17,13 @@
         </div>
       </div>
       <div class  ="col-md">
-        <button class="btn bg-red-btn">Cancel all Alerts </button>
-        <button class="btn bg-dark-blue-btn">See all Orders</button>
+        <button class="btn bg-red-btn"  (click)= "deleteAll()">Cancel all Alerts </button>
+        <button class="btn bg-dark-blue-btn" (click)=" goToOrders()">See all Orders</button>
       </div>
     </div>
     <div class="row">
-      <div class="col-md"></div>
-      <div *ngFor="let a of alarms" class="col-md-3">
-        <div class="card text-center">
+        <div *ngFor="let a of alarms" class="col-md-3">
+        <div [hidden]="a.hasAlarm" class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">

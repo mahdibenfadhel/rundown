@@ -3,12 +3,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md"></div>
-      <div class="col-md-3">
+      <div *ngFor="let a of alarms; let i = index" class="col-md-3">
         <div class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">
-                <p class="desc">Cancel
+                <p class="desc" (click)="deleteAlarm()">Cancel
                   <mat-icon>close</mat-icon>
                 </p>
               </div>
@@ -92,7 +92,7 @@
           <div class="card-header p-0"></div>
         </div>
       </div>
-      <div class="col-md-1 align-self-center">
+      <div (click)="addAlarm()" class="col-md-1 align-self-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="64.053" height="64.138" viewBox="0 0 64.053 64.138">
           <g id="plus" transform="translate(-0.301 0)">
             <path id="Tracé_1906" data-name="Tracé 1906" d="M57.364,58.709c-9.814,8.012-40.459,8.012-50.072,0-9.814-8.012-8.813-42.261,0-51.274s41.26-9.013,50.072,0S67.178,50.7,57.364,58.709Z" transform="translate(0 -0.58)" fill="#1e2e50"/>
