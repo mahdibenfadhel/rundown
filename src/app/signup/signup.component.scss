@@ -53,3 +53,16 @@ button:focus{
 .text-align-center{
   text-align: center;
 }
+
+.image {
+  background-image: url("~src/assets/img/bgi.png");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
