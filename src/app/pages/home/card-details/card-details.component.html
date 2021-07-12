@@ -3,12 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
+        <form [formGroup]="registerForm">
         <div class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">
-                <h1>MPC</h1>
-                <h2 class="date">DEC-20</h2>
+                <h1>{{auction.currency}}</h1>
+                <h2 class="date">{{auction.rate_start | date: 'MMM-dd'}}</h2>
               </div>
             </div>
             <div class="row">
@@ -29,9 +30,9 @@
             </div>
             <div class="row">
               <div class="col-md flex">
-                <div class="bg-green" (click)="saveOrder('rec')"><h1>R</h1></div>
+                <div class="bg-green"  (click)="saveOrder('rec')"><h1>R</h1></div>
                 <div class="bg-chart-secondary">
-                  <input type="number" class="rate" [(ngModel)]="rate">
+                  <input type="number" class="rate" formControlName="rate" [min]="min" [max]="max">
                   <p class="m-0 p-0">mid</p>
                 </div>
                 <div class="bg-red" (click)="saveOrder('pay')"><h1>P</h1></div>
@@ -48,12 +49,15 @@
             </div>
             <div class="row">
               <div class="col-md flex">
-                <p class="alert-msg">Alert Me</p><mat-slide-toggle class="mx-4" [(ngModel)]="alert"></mat-slide-toggle>
               </div>
             </div>
           </div>
           <div class="card-header p-0"></div>
         </div>
+          <p class = "mat-error"
+            *ngIf="registerForm.get('rate').errors"
+          >rate must be be between {{min}} and {{max}}</p>
+        </form>
       </div>
       <div class="col-md detail">
         <h2 class="mb-4">Parameters(MPC, first trade below)</h2>

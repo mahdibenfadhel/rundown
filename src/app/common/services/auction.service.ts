@@ -19,4 +19,10 @@ export class AuctionService {
   CreateOrder(auctionId, order): Observable<any> {
     return this.apiService.post('order/'+ auctionId, order);
   }
+  DeleteAllOrders(): Observable<any> {
+    return this.apiService.delete('order');
+  }
+  DeleteAllAlarms(): Observable<any> {
+    return this.apiService.delete('alarm');
+  }
 }

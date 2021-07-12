@@ -17,8 +17,8 @@ this.auctions = res;
 console.log(this.auctions)
     })
   }
-  navigateToDetail(){
-this.router.navigate(['/details'])
+  navigateToDetail(auction){
+this.router.navigate(['/details'], {queryParams: {auction: JSON.stringify(auction)}})
   }
   navigateToOrder(){
 this.router.navigate(['/order'])

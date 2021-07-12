@@ -17,8 +17,7 @@
         </div>
       </div>
       <div class="col-md">
-        <button class="btn bg-red-btn" (click)="deleteAll()">Cancel all Alerts </button>
-        <button class="btn bg-dark-blue-btn" (click)="goToAlarms()">See all Orders</button>
+        <button class="btn bg-red-btn"  (click)="open(content)">Cancel all Alerts </button>
       </div>
     </div>
     <div *ngFor="let order of orders" class="row mb-2">
@@ -109,3 +108,17 @@
   </div>
   <app-footer></app-footer>
 </div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirm ?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close('Cross click')">
+      <span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="modal-body">
+    <h4 class="my-4">Are you sure you want to delete all alerts?</h4>  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss('Save click')">Confirm</button>
+  </div>
+</ng-template>
+
