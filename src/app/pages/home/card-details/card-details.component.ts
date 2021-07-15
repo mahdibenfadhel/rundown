@@ -47,6 +47,7 @@ this.setForm()
         volume: "0",
         unit: "0",
         modified_by: 0,
+        hasAlarm: false
       }
       this.auctionService.CreateOrder(1, order).subscribe(res => {
         this.router.navigate(['trade'])

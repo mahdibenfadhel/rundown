@@ -10,7 +10,9 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./trade-blotter.component.scss']
 })
 export class TradeBlotterComponent implements OnInit {
-  orders;
+  orders = [];
+  selectedOption = 'ALL';
+  filteredOrders = [];
   closeResult = '';
 
   constructor(private auctionService: AuctionService, private router: Router,
@@ -20,14 +22,20 @@ export class TradeBlotterComponent implements OnInit {
 
   ngOnInit(): void {
     this.auctionService.getOrders().subscribe(res => {
-      this.orders = res;
+      res.forEach(a => {
+        console.log(res)
+        a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
+        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
+        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
+        this.orders.push(a)
+      })
+      this.filteredOrders = this.orders;
   })
   }
   deleteAll(){
-    this.auctionService.DeleteAllOrders().subscribe(res => {
-      this.orders = res;
-    })
-    this.orders = [];
+    this.auctionService.DeleteAllOrders().subscribe();
+  this.orders = [];
+  this.filteredOrders = [];
   }
   goToAlarms(){
 this.router.navigate(['alarm'])
@@ -48,6 +56,16 @@ this.router.navigate(['alarm'])
       return 'by clicking on a backdrop';
     } else {
       this.deleteAll()
+    }
+  }
+  filter(option){
+    if (option === 'ALL')
+    {
+      this.filteredOrders = this.orders
+    }
+    else {
+      this.selectedOption = option;
+      this.filteredOrders = this.orders.filter(f => f.auction.currency === option)
     }
   }
 }

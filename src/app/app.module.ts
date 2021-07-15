@@ -18,7 +18,7 @@ import { OrderComponent } from './pages/home/order/order.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.component';
 import {AuctionService} from "./common/services/auction.service";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {MatInputModule} from "@angular/material/input";
@@ -28,6 +28,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ErrorInterceptor} from "./common/interceptors/error-interceptor";
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatDialogModule,
     NgbModule,
   ],
-  providers: [AuctionService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  AuctionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

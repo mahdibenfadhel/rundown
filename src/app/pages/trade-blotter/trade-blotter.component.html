@@ -6,12 +6,13 @@
         <div>
           <table>
             <tr>
-              <th>MPC</th>
-              <th>ECB</th>
-              <th>FOMC</th>
-              <th>RBA</th>
-              <th>BOC</th>
-              <th>RBNZ</th>
+              <th (click)="filter('MPC')" [ngClass]="{'selected' : selectedOption === 'MPC'}">MPC</th>
+              <th (click)="filter('ECB')" [ngClass]="{'selected' : selectedOption === 'ECB'}">ECB</th>
+              <th (click)="filter('FOMC')" [ngClass]="{'selected' : selectedOption === 'FOMC'}">FOMC</th>
+              <th (click)="filter('RBA')" [ngClass]="{'selected' : selectedOption === 'RBA'}">RBA</th>
+              <th (click)="filter('BOC')" [ngClass]="{'selected' : selectedOption === 'BOC'}">BOC</th>
+              <th (click)="filter('RBNZ')" [ngClass]="{'selected' : selectedOption === 'RBNZ'}">RBNZ</th>
+              <th (click)="filter('ALL')" [ngClass]="{'selected' : selectedOption === 'ALL'}">All</th>
             </tr>
           </table>
         </div>
@@ -20,7 +21,7 @@
         <button class="btn bg-red-btn"  (click)="open(content)">Cancel all Alerts </button>
       </div>
     </div>
-    <div *ngFor="let order of orders" class="row mb-2">
+    <div *ngFor="let order of filteredOrders" class="row mb-2">
       <div class="col-md-12">
         <div class="card text-center">
           <div class="card-content">

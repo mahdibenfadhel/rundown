@@ -20,7 +20,7 @@ export class AuctionService {
     return this.apiService.post('order/'+ auctionId, order);
   }
   DeleteAllOrders(): Observable<any> {
-    return this.apiService.delete('order');
+    return this.apiService.delete('order/allOrderFromUser');
   }
   DeleteAllAlarms(): Observable<any> {
     return this.apiService.delete('alarm');
