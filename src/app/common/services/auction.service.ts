@@ -16,11 +16,16 @@ export class AuctionService {
   getOrders(): Observable<any> {
     return this.apiService.get('order');
   }
-  CreateOrder(auctionId, order): Observable<any> {
+    CreateOrder(auctionId, order): Observable<any> {
     return this.apiService.post('order/'+ auctionId, order);
   }
-  DeleteAllOrders(): Observable<any> {
-    return this.apiService.delete('order/allOrderFromUser');
+  DeleteAllOrders(alarm?): Observable<any> {
+    if (alarm) {
+      return this.apiService.delete('order/allOrderFromUser');
+    }
+  else {
+      return this.apiService.delete('order/allAlarmFromUser');
+    }
   }
   DeleteAllAlarms(): Observable<any> {
     return this.apiService.delete('alarm');

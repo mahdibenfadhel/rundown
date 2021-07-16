@@ -4,6 +4,12 @@
     <list default="true" id="34d429f0-9ab0-40a7-a83b-8a99d6ebaf56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/common/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/common/services/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/common/services/auction.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/common/services/auction.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +181,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../touchlink/medicalAdvisor/med_Advisor_Frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="C:\Users\mahdi\Desktop\freelance\rundown\node_modules\tslint" />
@@ -268,7 +274,8 @@
       <workItem from="1625937561410" duration="5795000" />
       <workItem from="1626100346480" duration="26000" />
       <workItem from="1626164790534" duration="33000" />
-      <workItem from="1626351577390" duration="7218000" />
+      <workItem from="1626351577390" duration="8435000" />
+      <workItem from="1626437968195" duration="4269000" />
     </task>
     <servers />
   </component>

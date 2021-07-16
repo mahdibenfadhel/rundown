@@ -180,3 +180,7 @@ button{
   transform: rotate(180deg);
   display: inline-block;
 }
+.selected{
+  background-color: $dark-blue !important;
+  color: $white !important;
+}

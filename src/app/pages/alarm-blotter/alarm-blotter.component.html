@@ -6,24 +6,25 @@
         <div>
           <table>
             <tr>
-              <th>MPC</th>
-              <th>ECB</th>
-              <th>FOMC</th>
-              <th>RBA</th>
-              <th>BOC</th>
-              <th>RBNZ</th>
+              <th (click)="filter('MPC')" [ngClass]="{'selected' : selectedOption === 'MPC'}">MPC</th>
+              <th (click)="filter('ECB')" [ngClass]="{'selected' : selectedOption === 'ECB'}">ECB</th>
+              <th (click)="filter('FOMC')" [ngClass]="{'selected' : selectedOption === 'FOMC'}">FOMC</th>
+              <th (click)="filter('RBA')" [ngClass]="{'selected' : selectedOption === 'RBA'}">RBA</th>
+              <th (click)="filter('BOC')" [ngClass]="{'selected' : selectedOption === 'BOC'}">BOC</th>
+              <th (click)="filter('RBNZ')" [ngClass]="{'selected' : selectedOption === 'RBNZ'}">RBNZ</th>
+              <th (click)="filter('ALL')" [ngClass]="{'selected' : selectedOption === 'ALL'}">All</th>
             </tr>
           </table>
         </div>
       </div>
       <div class  ="col-md">
-        <button class="btn bg-red-btn"  (click)= "deleteAll()">Cancel all Alerts </button>
-        <button class="btn bg-dark-blue-btn" (click)=" goToOrders()">See all Orders</button>
+        <button class="btn bg-red-btn"  (click)="open(content)">Cancel all Alerts </button>
       </div>
     </div>
     <div class="row">
-        <div *ngFor="let a of alarms" class="col-md-3">
-        <div [hidden]="a.hasAlarm" class="card text-center">
+        <div  class="col-md-3">
+          <div *ngFor="let a of filteredOrders">
+        <div *ngIf="a.hasAlarm" class="card text-center">
           <div class="card-content">
             <div class="row">
               <div class="col">
@@ -104,12 +105,24 @@
           </div>
           <div class="card-header p-0"></div>
         </div>
+          </div>
       </div>
-      <div class="col-md"></div>
-
     </div>
   </div>
   <app-footer></app-footer>
 </div>
 
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Confirm ?</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.close('Cross click')">
+      <span aria-hidden="true">&times;</span></button>
+  </div>
+  <div class="modal-body">
+    <h4 class="my-4">Are you sure you want to delete all alerts?</h4>  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss('Save click')">Confirm</button>
+  </div>
+</ng-template>
 

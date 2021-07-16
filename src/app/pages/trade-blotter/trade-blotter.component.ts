@@ -22,7 +22,7 @@ export class TradeBlotterComponent implements OnInit {
 
   ngOnInit(): void {
     this.auctionService.getOrders().subscribe(res => {
-      res.forEach(a => {
+      res.data.forEach(a => {
         console.log(res)
         a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
         a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
