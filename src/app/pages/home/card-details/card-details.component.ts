@@ -38,7 +38,6 @@ this.setForm()
     );
   }
   saveOrder(type){
-  console.log(this.registerForm, this.min, this.max)
   if (this.registerForm.valid)
     {
       const order = {
@@ -47,7 +46,8 @@ this.setForm()
         volume: "0",
         unit: "0",
         modified_by: 0,
-        hasAlarm: false
+        hasAlarm: false,
+        isFromAdmin: false
       }
       this.auctionService.CreateOrder(1, order).subscribe(res => {
         this.router.navigate(['trade'])

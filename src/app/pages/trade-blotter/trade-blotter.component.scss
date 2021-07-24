@@ -224,3 +224,8 @@ button{
   background-color: $dark-blue !important;
   color: $white !important;
 }
+.closeIcon{
+  position: absolute;
+  right: 0;
+  z-index: 20;
+}

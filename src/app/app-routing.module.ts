@@ -8,12 +8,14 @@ import {TradeBlotterComponent} from './pages/trade-blotter/trade-blotter.compone
 import {AlarmBlotterComponent} from './pages/alarm-blotter/alarm-blotter.component';
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
+import {TradeBottlerAdminComponent} from "./pages/trade-bottler-admin/trade-bottler-admin.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'details', component: CardDetailsComponent },
+  { path: 'orders', component: TradeBottlerAdminComponent },
   { path: 'order', component: OrderComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'trade', component: TradeBlotterComponent },

@@ -29,6 +29,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ErrorInterceptor} from "./common/interceptors/error-interceptor";
+import { TradeBottlerAdminComponent } from './pages/trade-bottler-admin/trade-bottler-admin.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {ErrorInterceptor} from "./common/interceptors/error-interceptor";
     OrderComponent,
     AlarmBlotterComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TradeBottlerAdminComponent
   ],
   imports: [
     HttpClientModule,

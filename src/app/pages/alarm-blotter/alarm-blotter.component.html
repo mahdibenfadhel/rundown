@@ -22,11 +22,11 @@
       </div>
     </div>
     <div class="row">
-        <div  class="col-md-3">
-          <div *ngFor="let a of filteredOrders">
-        <div *ngIf="a.hasAlarm" class="card text-center">
-          <div class="card-content">
+          <div *ngFor="let a of filteredOrders" class="col-md-3">
+        <div *ngIf="a.hasAlarm" class="card text-center ">
+          <div class="card-content " >
             <div class="row">
+              <mat-icon class="closeIcon" (click)="deleteOrder(a.id)">close</mat-icon>
               <div class="col">
                 <h1>{{a.auction.currency}}</h1>
                 <h2 class="date">DEC-20</h2>
@@ -103,10 +103,8 @@
               </div>
             </div>
           </div>
-          <div class="card-header p-0"></div>
         </div>
           </div>
-      </div>
     </div>
   </div>
   <app-footer></app-footer>

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {AuctionService} from "../../common/services/auction.service";
 import {Router} from "@angular/router";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {MatDialog} from "@angular/material/dialog";
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-trade-blotter',
-  templateUrl: './trade-blotter.component.html',
-  styleUrls: ['./trade-blotter.component.scss']
+  selector: 'app-trade-bottler-admin',
+  templateUrl: './trade-bottler-admin.component.html',
+  styleUrls: ['./trade-bottler-admin.component.scss']
 })
-export class TradeBlotterComponent implements OnInit {
+export class TradeBottlerAdminComponent implements OnInit {
   orders = [];
   selectedOption = 'ALL';
   filteredOrders = [];
@@ -18,14 +18,9 @@ export class TradeBlotterComponent implements OnInit {
   constructor(private auctionService: AuctionService, private router: Router,
               private modalService: NgbModal,
               public dialog: MatDialog
-) { }
+  ) { }
 
   ngOnInit(): void {
-    this.orders = [];
-    this.selectedOption = 'ALL';
-    this.filteredOrders = [];
-    this.closeResult = '';
-
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
         console.log(res)
@@ -35,34 +30,13 @@ export class TradeBlotterComponent implements OnInit {
         this.orders.push(a)
       })
       this.filteredOrders = this.orders;
-  })
+    })
   }
-  deleteAll(){
-    this.auctionService.DeleteAllOrders().subscribe();
-  this.orders = [];
-  this.filteredOrders = [];
-  }
+
   goToAlarms(){
-this.router.navigate(['alarm'])
+    this.router.navigate(['alarm'])
   }
 
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      this.deleteAll()
-    }
-  }
   filter(option){
     if (option === 'ALL')
     {
@@ -72,10 +46,5 @@ this.router.navigate(['alarm'])
       this.selectedOption = option;
       this.filteredOrders = this.orders.filter(f => f.auction.currency === option)
     }
-  }
-  deleteOrder(id){
-    this.auctionService.deleteAuctionById(id).subscribe( res => {
-      this.ngOnInit()
-    });
   }
 }

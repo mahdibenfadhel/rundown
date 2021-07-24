@@ -30,4 +30,7 @@ export class AuctionService {
   DeleteAllAlarms(): Observable<any> {
     return this.apiService.delete('alarm');
   }
+  deleteAuctionById(id): Observable<any> {
+    return this.apiService.delete('order/' + id);
+  }
 }

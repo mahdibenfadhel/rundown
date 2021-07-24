@@ -24,19 +24,27 @@ h2{
   margin: auto;
 }
 .bg-dark-blue{
-  background-color: $light-blue;
-  color: $dark-blue;
+  background-color: $dark-blue;
+  color: $white;
   font-size: $font-sm;
   text-align: center;
   h2{
-    font-size: $font-lg;
+    font-size: $font-lgg;
     color: $white;
+    font-weight: 800;
+  }
+  p{
+    font-size: $font-md;
   }
 }
 .bg-chart-secondary{
   background-color: $lightest-blue;
   color: $dark-blue;
-  width: 100%;
+  font-size: $font-xs;
+  height: 100%;
+  h2{
+    margin: 15px;
+  }
 }
 .bg-chart-secondary2{
   background-color: $light-grey;
@@ -57,27 +65,44 @@ h3{
   text-align: left;
 }
 .bg-green{
+  height: 50px;
   background-color: $green;
   border-radius: 6px;
   h1{
     color: $white;
     text-decoration: none;
     font-size: $font-xl;
-    margin: 5px !important;
+    padding: 7px;
   }
   h2, p{
     color: $white;
     font-size: $font-lg;
   }
 }
+.bg-light-green{
+  background-color: $light-green;
+  border-radius: 6px;
+  p{
+    color: $dark-blue;
+    text-decoration: none;
+    font-size: $font-md;
+    text-align: left;
+  }
+  h2{
+    color: $dark-blue;
+    font-size: $font-lg;
+    text-align: left;
+  }
+}
 .bg-red{
+  height: 50px;
   background-color: $red;
   border-radius: 6px;
   h1{
     color: $white;
     text-decoration: none;
     font-size: $font-xl;
-    margin: 5px !important;
+    padding: 7px;
   }
   h2, p{
     color: $white;
@@ -104,9 +129,15 @@ h3{
 .bg-chart-primary{
   background-color: $light-grey;
   color: $dark-blue;
-  font-size: $font-xs;
   h2{
-    font-size: $font-lg;
+    font-size: $font-md;
+    text-align: left;
+    font-weight: 600;
+
+  }
+  p{
+    font-size: $font-sm;
+    text-align: left;
   }
 }
 .alert-msg{
@@ -172,20 +203,24 @@ button{
 .bg-dark-blue-btn{
   background-color: $dark-blue;
 }
-.rotate-180{
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-  display: inline-block;
+.col-md-10 .row div{
+  padding: 3px;
+  border-radius: 6px;
+}
+.card:hover{
+  background-color: $dark-blue;
+  h1, .date{
+    color: $white;
+  }
+  .bg-dark-blue{
+    border: solid 1px $white;
+  }
+}
+
+.close{
+  width: 50px;
 }
 .selected{
   background-color: $dark-blue !important;
   color: $white !important;
-}
-.closeIcon{
-  position: absolute;
-  right: 0;
-  z-index: 20;
 }

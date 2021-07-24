@@ -16,6 +16,10 @@ export class AlarmBlotterComponent implements OnInit {
   constructor(private auctionService: AuctionService, private router: Router, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.orders = [];
+    this.closeResult = '';
+    this.selectedOption = 'ALL';
+    this.filteredOrders = [];
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
         console.log(res)
@@ -64,5 +68,10 @@ export class AlarmBlotterComponent implements OnInit {
       this.selectedOption = option;
       this.filteredOrders = this.orders.filter(f => f.auction.currency === option)
     }
+  }
+  deleteOrder(id){
+    this.auctionService.deleteAuctionById(id).subscribe( res => {
+      this.ngOnInit()
+    });
   }
 }
