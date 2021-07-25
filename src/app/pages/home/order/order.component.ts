@@ -12,7 +12,7 @@ auction;
   ) { }
 
   ngOnInit(): void {
-    this.auction = JSON.parse(this.route.snapshot.queryParams.auction);
+   // this.auction = JSON.parse(this.route.snapshot.queryParams.auction);
 
   }
 

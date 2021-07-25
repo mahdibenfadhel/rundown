@@ -1,7 +1,11 @@
 @import "src/styles";
 .card{
-  margin: 10% 0;
-
+  top: 5%;
+  position: absolute;
+  margin-left: 10%;
+  margin-right: 10%;
+  left: 0;
+  right: 0;
   .card-content{
     margin: 30px;
     *{
