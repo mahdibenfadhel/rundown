@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d429f0-9ab0-40a7-a83b-8a99d6ebaf56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/signup.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/signup.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/footer/footer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/footer/footer.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +282,8 @@
       <workItem from="1626351577390" duration="8435000" />
       <workItem from="1626437968195" duration="4999000" />
       <workItem from="1626537769531" duration="9000" />
-      <workItem from="1627139094020" duration="10292000" />
+      <workItem from="1627139094020" duration="11342000" />
+      <workItem from="1627496829802" duration="4891000" />
     </task>
     <servers />
   </component>

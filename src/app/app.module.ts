@@ -46,7 +46,8 @@ import { TradeBottlerAdminComponent } from './pages/trade-bottler-admin/trade-bo
     AlarmBlotterComponent,
     LoginComponent,
     SignupComponent,
-    TradeBottlerAdminComponent
+    TradeBottlerAdminComponent,
+
   ],
   imports: [
     HttpClientModule,

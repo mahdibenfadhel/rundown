@@ -1,11 +1,26 @@
+@import "~src/styles";
 footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
+  background-color: $dark-blue;
   line-height: 20px;
+  margin: 0;
 }
-
-footer a {
+h1{
+  color: #FFffff;
+  font-size: $font-md;
+  font-weight: 500;
+}
+footer a{
   display: flex;
-  align-items: center;
+  color: $light-grey;
+  font-weight: 100;
 }
+.main{
+  margin: auto;
+}
+p{
+  text-align: center;
+  color: $light-grey;
+  font-weight: 100;
+}
+.align-right{
+padding-left: 300px}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
