@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34d429f0-9ab0-40a7-a83b-8a99d6ebaf56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/explore/explore.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/explore/explore.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/explore/explore.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/explore/explore.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/order/order.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/order/order.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/footer/footer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/shared/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/header/header.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +281,7 @@
       <workItem from="1626537769531" duration="9000" />
       <workItem from="1627139094020" duration="11342000" />
       <workItem from="1627496829802" duration="5693000" />
-      <workItem from="1627646334031" duration="4820000" />
+      <workItem from="1627646334031" duration="5094000" />
     </task>
     <servers />
   </component>
