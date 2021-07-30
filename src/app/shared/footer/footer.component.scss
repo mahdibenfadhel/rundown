@@ -2,14 +2,14 @@
 footer {
   background-color: $dark-blue;
   line-height: 20px;
-  margin: 0;
+  margin: 150px 0 0 0;
 }
 h1{
   color: #FFffff;
   font-size: $font-md;
   font-weight: 500;
 }
-footer a{
+.nav-link{
   display: flex;
   color: $light-grey;
   font-weight: 100;
@@ -20,7 +20,12 @@ footer a{
 p{
   text-align: center;
   color: $light-grey;
-  font-weight: 100;
+  font-weight: 300;
+  white-space: nowrap;
 }
 .align-right{
-padding-left: 300px}
+padding-left: 300px
+}
+a:hover{
+  color: $light-grey;
+}

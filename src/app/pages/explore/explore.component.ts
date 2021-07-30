@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class ExploreComponent implements OnInit {
   alarms = []
   option;
+  current = 4.05;
   set = 0;
   constructor( private auctionService: AuctionService, private router: Router) { }
 
@@ -29,17 +30,27 @@ this.alarms.splice(id, 1)
       this.option = option;
     }  }
   saveOrder(){
-      const order = {
-        rate: this.set,
-        direction: this.option,
-        volume: "0",
-        unit: "0",
-        modified_by: 0,
-        hasAlarm: true,
-        isFromAdmin: false
+    if(Math.abs(this.set - this.current) < 0.5) {
+      if(this.option) {
+        const order = {
+          rate: this.set,
+          direction: this.option,
+          volume: "0",
+          unit: "0",
+          modified_by: 0,
+          hasAlarm: true,
+          isFromAdmin: false
+        }
+        this.auctionService.CreateOrder(1, order).subscribe(res => {
+          this.router.navigate(['alarm'])
+        })
       }
-      this.auctionService.CreateOrder(1, order).subscribe(res => {
-        this.router.navigate(['alarm'])
-      })
+      else {
+        alert('select pay or rec')
+      }
+    }
+    else {
+      alert('set value mast be between ' + (this.current + 0.5) + ' and '+ (this.current - 0.5))
+    }
   }
 }

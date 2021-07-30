@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="row">
-          <div *ngFor="let a of filteredOrders" class="col-md-3">
+          <div *ngFor="let a of filteredOrders" [ngClass]="{'col-md-3':a.hasAlarm}">
         <div *ngIf="a.hasAlarm" class="card text-center ">
           <div class="card-content " >
             <div class="row">

@@ -8,6 +8,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class OrderComponent implements OnInit {
 auction;
+type = 'R';
   constructor(    private route: ActivatedRoute,
   ) { }
 
@@ -15,5 +16,7 @@ auction;
    // this.auction = JSON.parse(this.route.snapshot.queryParams.auction);
 
   }
-
+switch(t){
+    this.type = t;
+}
 }

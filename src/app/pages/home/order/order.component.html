@@ -23,23 +23,32 @@
                   <p class="m-0 p-0">mid</p>
                 </div>
                 <div class="bg-red ml-0"><h2>4.10</h2><p class="m-0 p-0">order</p></div>
-                <div class="bg-green"><h1>R</h1></div>
+                <div *ngIf="type === 'R'" class="bg-green"><h1>R</h1></div>
+                <div *ngIf="type === 'P'" class="bg-red"><h1>P</h1></div>
               </div>
             </div>
             <div class="row">
               <div class="col-md mr-0 pr-0">
                 <div class="bg-chart-primary">
-                  <h2><b>$</b><mat-icon>expand_more</mat-icon></h2>
+                  <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>$</button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                      <button ngbDropdownItem>$</button>
+                      <button ngbDropdownItem>€</button>
+                      <button ngbDropdownItem>C$</button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="col-md mx-0 px-0">
                 <div class="bg-chart-primary">
-                  <h2><b>200k</b></h2>
+                  <h2 class="my-3"><b>200k</b></h2>
                 </div>
               </div>
               <div class="col-md ml-0 pl-0">
                 <div class="bg-dark-blue">
-                  <p class="py-2 m-0">switch to P</p>
+                  <p *ngIf="type === 'R'" class="py-2 m-0 my-2" (click)="switch('P')">switch to P</p>
+                  <p *ngIf="type === 'P'" class="py-2 m-0 my-2"(click)="switch('R')">switch to R</p>
                 </div>
               </div>
             </div>
