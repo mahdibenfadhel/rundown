@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   angular-docker:
-    container_name: rundown
+    container_name: rundownfront
     build: .
     ports:
       - '4200:80'

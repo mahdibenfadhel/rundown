@@ -28,7 +28,7 @@
             </div>
             <div class="row">
               <div class="col-md-3 mr-0 pr-0 ml-1">
-                <div *ngIf="option !== 'rec'" class="bg-red py-3" (click)="chooseRP('pay')">
+                <div [ngStyle]="{'background-color' : option === 'rec' ? 'grey' : ''}" class="bg-red py-3" (click)="chooseRP('pay')">
                   <svg class="rotate-180" id="Groupe_1118" data-name="Groupe 1118" xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.552" viewBox="0 0 45.877 73.552">
                     <g id="Groupe_1117" data-name="Groupe 1117" transform="translate(0)">
                       <path id="Tracé_1900" data-name="Tracé 1900" d="M109.885,21.358,88.6.526a1.456,1.456,0,0,0-2.24,0L65.084,21.358a1.68,1.68,0,0,0,1.12,2.912h10.08V51.263a2.576,2.576,0,0,0,2.24,2.128H96.445c.9,0,1.12-1.12,1.12-2.128V24.271h11.2a1.68,1.68,0,0,0,1.12-2.912Z" transform="translate(-64.546 0)" fill="#fff"/>
@@ -50,15 +50,15 @@
                   </div>
                 </div>
                 <div class="row p-0 m-0">
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-chart-primary">
-                      <h2>set:</h2>
+                  <div class="col-md-6 p-0 m-0">
+                    <div class="bg-chart-primary" >
+                      <h2 >set:</h2>
                     </div>
                   </div>
-                  <div class="col-md p-0 m-0">
-                    <div class="bg-chart-primary">
-                      <h2>
-                        <input type="number" class="rate"   [(ngModel)]="set">
+                  <div class="col-md-6 p-0 m-0">
+                    <div class="bg-chart-primary ">
+                      <h2 class="p-0 m-0">
+                        <input type="number" class="rate p-0 m-0"   [(ngModel)]="set">
                       </h2>
                     </div>
                   </div>
@@ -66,7 +66,7 @@
 
               </div>
               <div class="col-md-3 ml-0 pl-0 mr-1">
-                <div  *ngIf="option !== 'pay'" class="bg-green py-3" (click)="chooseRP('rec')">
+                <div  [ngStyle]="{'background-color' : option === 'pay' ? 'grey' : ''}" class="bg-green py-3" (click)="chooseRP('rec')">
                   <svg xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
                     <g id="up-arrow_1_" data-name="up-arrow (1)" transform="translate(45.877 73.551) rotate(180)">
                       <g id="Groupe_1118" data-name="Groupe 1118" transform="translate(0)">

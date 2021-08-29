@@ -3,6 +3,7 @@ import {AuctionService} from "../../../common/services/auction.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {validate} from "codelyzer/walkerFactory/walkerFn";
+import {interval, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-card-details',
@@ -13,8 +14,22 @@ export class CardDetailsComponent implements OnInit {
 auction;
 min = 0;
 max = 100;
-  registerForm: FormGroup;
-constructor(private auctionService: AuctionService,
+registerForm: FormGroup;
+  public dateNow = new Date();
+
+  milliSecondsInASecond = 1000;
+  hoursInADay = 24;
+  minutesInAnHour = 60;
+  SecondsInAMinute  = 60;
+
+  public timeDifference;
+  public secondsToDday;
+  public minutesToDday;
+  public hoursToDday;
+  public daysToDday;
+  private subscription: Subscription;
+
+  constructor(private auctionService: AuctionService,
             private fb: FormBuilder,
             private route: ActivatedRoute,
               private router: Router) { }
@@ -24,7 +39,20 @@ constructor(private auctionService: AuctionService,
     const auctionC = JSON.parse(this.route.snapshot.queryParams.auction);
     this.min = auctionC.rate_mid - 0.5
     this.max = +auctionC.rate_mid + 0.5
-this.setForm()
+    this.setForm()
+    this.subscription = interval(1000)
+      .subscribe(x => { this.getTimeDifference(new Date (this.auction.auction_cutoff)); });
+  }
+  private getTimeDifference (date) {
+    this.timeDifference = date.getTime() - new  Date().getTime();
+    this.allocateTimeUnits(this.timeDifference);
+  }
+
+  private allocateTimeUnits (timeDifference) {
+    this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
+    this.minutesToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour) % this.SecondsInAMinute);
+    this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
+    this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
   }
   setForm(): void{
     const auctionC = JSON.parse(this.route.snapshot.queryParams.auction);
@@ -49,7 +77,7 @@ this.setForm()
         hasAlarm: false,
         isFromAdmin: false
       }
-      this.auctionService.CreateOrder(1, order).subscribe(res => {
+      this.auctionService.CreateOrder(this.auction.id, order).subscribe(res => {
         this.router.navigate(['trade'])
       })
     }

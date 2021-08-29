@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, ReplaySubject, Observable } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
-
 import { JwtService } from './jwt.service';
-
-import { Router } from '@angular/router';
 import {ApiService} from "./api.service";
 const currentUserKey = 'user';
 @Injectable({

@@ -9,8 +9,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './trade-blotter.component.html',
   styleUrls: ['./trade-blotter.component.scss']
 })
+
+
 export class TradeBlotterComponent implements OnInit {
   orders = [];
+  filters = [];
   selectedOption = 'ALL';
   filteredOrders = [];
   closeResult = '';
@@ -28,13 +31,16 @@ export class TradeBlotterComponent implements OnInit {
 
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
-        console.log(res)
+        if(!a.isFromAdmin && !a.hasAlarm) {
+          this.filters.push(a.auction.currency)
+        }
         a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
         a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
         a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
         this.orders.push(a)
       })
-      this.filteredOrders = this.orders;
+      this.filters = this.filters.filter(this.onlyUnique)
+      this.filteredOrders = this.orders.filter(e => !e.isFromAdmin && !e.hasAlarm);
   })
   }
   deleteAll(){
@@ -77,5 +83,9 @@ this.router.navigate(['alarm'])
     this.auctionService.deleteAuctionById(id).subscribe( res => {
       this.ngOnInit()
     });
+  }
+
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
   }
 }

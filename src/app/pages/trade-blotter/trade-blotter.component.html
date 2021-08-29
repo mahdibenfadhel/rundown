@@ -7,12 +7,7 @@
           <table>
             <tr>
               <th (click)="filter('ALL')" [ngClass]="{'selected' : selectedOption === 'ALL'}">All</th>
-              <th (click)="filter('MPC')" [ngClass]="{'selected' : selectedOption === 'MPC'}">MPC</th>
-              <th (click)="filter('ECB')" [ngClass]="{'selected' : selectedOption === 'ECB'}">ECB</th>
-              <th (click)="filter('FOMC')" [ngClass]="{'selected' : selectedOption === 'FOMC'}">FOMC</th>
-              <th (click)="filter('RBA')" [ngClass]="{'selected' : selectedOption === 'RBA'}">RBA</th>
-              <th (click)="filter('BOC')" [ngClass]="{'selected' : selectedOption === 'BOC'}">BOC</th>
-              <th (click)="filter('RBNZ')" [ngClass]="{'selected' : selectedOption === 'RBNZ'}">RBNZ</th>
+              <th *ngFor="let f of filters" (click)="filter(f)" [ngClass]="{'selected' : selectedOption === f}">{{f}}</th>
             </tr>
           </table>
         </div>
@@ -50,14 +45,14 @@
                   <div class="col-md-2">
                     <div class="bg-chart-primary">
                       <h2>Fixed leg: </h2>
-                      <p class="float-left">10-mar-2021</p>
+                      <p class="float-left">{{order.auction.fix}}</p>
                       <br>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="bg-chart-primary">
                       <h2>Floating leg: </h2>
-                      <p class="float-left">10-mar-2021</p>
+                      <p class="float-left">{{order.auction.fix}}</p>
                       <br>
                     </div>
                   </div>

@@ -41,7 +41,7 @@ this.alarms.splice(id, 1)
           hasAlarm: true,
           isFromAdmin: false
         }
-        this.auctionService.CreateOrder(1, order).subscribe(res => {
+        this.auctionService.CreateOrder(2, order).subscribe(res => {
           this.router.navigate(['alarm'])
         })
       }

@@ -10,6 +10,7 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class AlarmBlotterComponent implements OnInit {
   orders = [];
+  filters = [];
   closeResult = '';
   selectedOption = 'ALL';
   filteredOrders = [];
@@ -22,15 +23,18 @@ export class AlarmBlotterComponent implements OnInit {
     this.filteredOrders = [];
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
-        console.log(res)
+        console.log(a)
+        if(a.hasAlarm) {
+          this.filters.push(a?.auction.currency)
+        }
         a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
         a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
         a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
         this.orders.push(a)
       })
-      this.filteredOrders = this.orders;
+      this.filters = this.filters.filter(this.onlyUnique)
+      this.filteredOrders = this.orders.filter(e => e.hasAlarm);
     })
-    this.filteredOrders = this.orders;
 
   }
   deleteAll(){
@@ -73,5 +77,8 @@ export class AlarmBlotterComponent implements OnInit {
     this.auctionService.deleteAuctionById(id).subscribe( res => {
       this.ngOnInit()
     });
+  }
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
   }
 }

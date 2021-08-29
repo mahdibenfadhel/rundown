@@ -25,7 +25,7 @@ res.forEach(a => {
   navigateToDetail(auction){
 this.router.navigate(['/details'], {queryParams: {auction: JSON.stringify(auction)}})
   }
-  navigateToOrder(){
-this.router.navigate(['/order'])
+  navigateToOrder(auction){
+this.router.navigate(['/order'], {queryParams: {auction: JSON.stringify(auction)}})
   }
 }

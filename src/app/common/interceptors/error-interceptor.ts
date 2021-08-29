@@ -36,7 +36,7 @@ export class ErrorInterceptor implements HttpInterceptor {
           if (err.status !== 401) {
             return;
           }
-          this.router.navigate(['login-page']);
+          this.router.navigate(['login']);
         }
       }));
   }

@@ -12,14 +12,14 @@
             </div>
             <div class="row">
               <div class="col">
-                <h1>MPC</h1>
-                <h2 class="date">DEC-20</h2>
+                <h1>{{auction.currency}}</h1>
+                <h2 class="date">{{auction.rate_start | date: 'MMM-dd'}}</h2>
               </div>
             </div>
             <div class="row">
               <div class="col-md flex">
                 <div class="bg-chart-secondary mr-0">
-                  <h2>4.05</h2>
+                  <h2>{{auction.rate_mid}}</h2>
                   <p class="m-0 p-0">mid</p>
                 </div>
                 <div class="bg-red ml-0"><h2>4.10</h2><p class="m-0 p-0">order</p></div>
@@ -31,7 +31,7 @@
               <div class="col-md mr-0 pr-0">
                 <div class="bg-chart-primary">
                   <div ngbDropdown class="d-inline-block">
-                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>$</button>
+                    <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle></button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                       <button ngbDropdownItem>$</button>
                       <button ngbDropdownItem>€</button>
@@ -83,7 +83,7 @@
       <div class="col-md detail">
         <div class="card">
           <div class="card-content">
-            <h2>MPC</h2>
+            <h2>{{auction.currency}}</h2>
             <hr>
             <p>Parameters(MPC, first trade below)
               Start Date:	18 Mar 2021

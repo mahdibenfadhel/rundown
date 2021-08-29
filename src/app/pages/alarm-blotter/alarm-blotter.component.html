@@ -7,12 +7,7 @@
           <table>
             <tr>
               <th (click)="filter('ALL')" [ngClass]="{'selected' : selectedOption === 'ALL'}">All</th>
-              <th (click)="filter('MPC')" [ngClass]="{'selected' : selectedOption === 'MPC'}">MPC</th>
-              <th (click)="filter('ECB')" [ngClass]="{'selected' : selectedOption === 'ECB'}">ECB</th>
-              <th (click)="filter('FOMC')" [ngClass]="{'selected' : selectedOption === 'FOMC'}">FOMC</th>
-              <th (click)="filter('RBA')" [ngClass]="{'selected' : selectedOption === 'RBA'}">RBA</th>
-              <th (click)="filter('BOC')" [ngClass]="{'selected' : selectedOption === 'BOC'}">BOC</th>
-              <th (click)="filter('RBNZ')" [ngClass]="{'selected' : selectedOption === 'RBNZ'}">RBNZ</th>
+              <th *ngFor="let f of filters" (click)="filter(f)" [ngClass]="{'selected' : selectedOption === f}">{{f}}</th>
             </tr>
           </table>
         </div>
@@ -22,8 +17,8 @@
       </div>
     </div>
     <div class="row">
-          <div *ngFor="let a of filteredOrders" [ngClass]="{'col-md-3':a.hasAlarm}">
-        <div *ngIf="a.hasAlarm" class="card text-center ">
+          <div *ngFor="let a of filteredOrders" class="col-md-3">
+        <div class="card text-center ">
           <div class="card-content " >
             <div class="row">
               <mat-icon class="closeIcon" (click)="deleteOrder(a.id)">close</mat-icon>
@@ -59,8 +54,9 @@
                     <div class="bg-green">
                       <h2>{{a.rate}}</h2>
                     </div>
-                  </div><div *ngIf="a.direction ==='pay'" class="col-md p-0 m-0">
-                    <div class="bg-red">
+                  </div>
+                  <div *ngIf="a.direction ==='pay'" class="col-md p-0 m-0">
+                    <div class="bg-green">
                       <h2>{{a.rate}}</h2>
                     </div>
                   </div>
