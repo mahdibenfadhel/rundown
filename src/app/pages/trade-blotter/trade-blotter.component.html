@@ -16,7 +16,8 @@
         <button class="btn bg-red-btn"  (click)="open(content)">Cancel all Orders </button>
       </div>
     </div>
-    <div *ngFor="let order of filteredOrders" class="row mb-2">
+    <span class="text-muted">* Notional can be edited</span>
+    <div *ngFor="let order of filteredOrders; let i = index" class="row mb-2">
       <div class="col-md-12">
         <div class="card text-center">
           <div class="card-content">
@@ -73,13 +74,15 @@
                   <div class="col-md-2">
                     <div class="bg-dark-blue">
                       <p><b>size of Dv01:</b></p>
-                      <h2>200 k</h2>
+                        <h2>{{ddv[i].ddv | number : '1.0-3'}}</h2>
                     </div>
                   </div>
                   <div class="col-md-2">
                     <div class="bg-dark-blue">
-                      <p><b>Notional:</b></p>
-                      <h2>55.2 BIO</h2>
+                      <p><b>Notional*:</b></p>
+                      <h2 class="p-0 m-0">
+                      <input type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">
+                      </h2>
                     </div>
                   </div>
                   <div class="col-md-3">

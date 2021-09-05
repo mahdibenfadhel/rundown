@@ -11,8 +11,8 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class ApiService {
-  url = 'http://localhost:3000/';
-  // url = 'http://vps-e3bbe2b6.vps.ovh.net:3000/';
+  // url = 'http://localhost:3000/';
+  url = 'http://vps-e3bbe2b6.vps.ovh.net:3000/';
   constructor(private http: HttpClient) {}
 
   get(path: string, myParams: HttpParams = new HttpParams()): Observable<any> {

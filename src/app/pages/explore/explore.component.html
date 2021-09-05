@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md"></div>
-      <div *ngFor="let a of alarms; let i = index" class="col-md-3">
+      <div *ngFor="let a of filters; let i = index" class="col-md-3">
         <div class="card text-center">
           <div class="card-content">
             <div class="row">
@@ -15,8 +15,8 @@
             </div>
             <div class="row">
               <div class="col">
-                <h1>MPC</h1>
-                <h2 class="date">DEC-20</h2>
+                <h1>{{a.type}}</h1>
+                <h2 class="date">{{a.date | date: 'MMM-dd'}}</h2>
               </div>
             </div>
             <div class="row">
@@ -27,9 +27,9 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-3 mr-0 pr-0 ml-1">
-                <div [ngStyle]="{'background-color' : option === 'rec' ? 'grey' : ''}" class="bg-red py-3" (click)="chooseRP('pay')">
-                  <svg class="rotate-180" id="Groupe_1118" data-name="Groupe 1118" xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.552" viewBox="0 0 45.877 73.552">
+              <div class="col-md-2 mr-0 pr-0 ml-1">
+                <div [ngStyle]="{'background-color' : option[i]  === 'rec' ? 'grey' : ''}" class="bg-red py-3" (click)="chooseRP('pay', i)">
+                  <svg class="rotate-180" id="Groupe_1118" data-name="Groupe 1118" xmlns="http://www.w3.org/2000/svg" width="25" height="73.552" viewBox="0 0 45.877 73.552">
                     <g id="Groupe_1117" data-name="Groupe 1117" transform="translate(0)">
                       <path id="Tracé_1900" data-name="Tracé 1900" d="M109.885,21.358,88.6.526a1.456,1.456,0,0,0-2.24,0L65.084,21.358a1.68,1.68,0,0,0,1.12,2.912h10.08V51.263a2.576,2.576,0,0,0,2.24,2.128H96.445c.9,0,1.12-1.12,1.12-2.128V24.271h11.2a1.68,1.68,0,0,0,1.12-2.912Z" transform="translate(-64.546 0)" fill="#fff"/>
                       <path id="Tracé_1901" data-name="Tracé 1901" d="M141.512,264.722H123.591a1.68,1.68,0,1,0,0,3.36h17.921a1.68,1.68,0,1,0,0-3.36Z" transform="translate(-109.613 -207.971)" fill="#fff"/>
@@ -45,7 +45,7 @@
                   <div class="col-md p-0 m-0">
                     <div class="bg-dark-blue">
                       <p class="m-0 p-0">current: </p>
-                      <h2><b>{{current}}</b></h2>
+                      <h2><b>{{a.rate}}</b></h2>
                     </div>
                   </div>
                 </div>
@@ -58,16 +58,16 @@
                   <div class="col-md-6 p-0 m-0">
                     <div class="bg-chart-primary ">
                       <h2 class="p-0 m-0">
-                        <input type="number" class="rate p-0 m-0"   [(ngModel)]="set">
+                        <input type="number" class="rate p-0 m-0"   [(ngModel)]="set[i]">
                       </h2>
                     </div>
                   </div>
                 </div>
 
               </div>
-              <div class="col-md-3 ml-0 pl-0 mr-1">
-                <div  [ngStyle]="{'background-color' : option === 'pay' ? 'grey' : ''}" class="bg-green py-3" (click)="chooseRP('rec')">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="45.877" height="73.551" viewBox="0 0 45.877 73.551">
+              <div class="col-md-2 ml-0 pl-0 mr-1">
+                <div  [ngStyle]="{'background-color' : option[i] === 'pay' ? 'grey' : ''}" class="bg-green py-3" (click)="chooseRP('rec', i)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="73.551" viewBox="0 0 45.877 73.551">
                     <g id="up-arrow_1_" data-name="up-arrow (1)" transform="translate(45.877 73.551) rotate(180)">
                       <g id="Groupe_1118" data-name="Groupe 1118" transform="translate(0)">
                         <g id="Groupe_1117" data-name="Groupe 1117">
@@ -85,7 +85,7 @@
             </div>
             <div class="row">
               <div class="col-md">
-                <div class="bg-green text-white " (click)="saveOrder()">
+                <div class="bg-green text-white " (click)="saveOrder(i, a.rate, a.id)">
                   <p class="m-0 pt-2 pb-2">Alert</p>
                 </div>
               </div>

@@ -9,12 +9,20 @@ import {Router} from "@angular/router";
 })
 export class ExploreComponent implements OnInit {
   alarms = []
-  option;
-  current = 4.05;
-  set = 0;
+  filters = [];
+  filteredOrders = [];
+  option = [];
+  set = [];
   constructor( private auctionService: AuctionService, private router: Router) { }
 
   ngOnInit(): void {
+    this.auctionService.getOrders().subscribe(res => {
+      res.data.forEach(a => {
+        if(!a.isFromAdmin && !a.hasAlarm) {
+          this.filters.push({type: a.auction.currency, id: a.auction.id, date: a.auction.rate_end, rate: a.auction.rate_mid})
+        }
+      })
+    })
   }
   deleteAlarm(id){
 this.alarms.splice(id, 1)
@@ -22,26 +30,26 @@ this.alarms.splice(id, 1)
   addAlarm(){
     this.alarms.push({id: this.alarms.length + 1})
   }
-  chooseRP(option){
-    if (this.option === option){
-      this.option = null;
+  chooseRP(option, index){
+    if (this.option[index] === option){
+      this.option[index] = null;
     }
     else {
-      this.option = option;
+      this.option[index] = option;
     }  }
-  saveOrder(){
-    if(Math.abs(this.set - this.current) < 0.5) {
+  saveOrder(index, rate, id){
+    if(Math.abs(this.set[index] - rate) < 0.5) {
       if(this.option) {
         const order = {
-          rate: this.set,
-          direction: this.option,
+          rate: this.set[index],
+          direction: this.option[index],
           volume: "0",
           unit: "0",
           modified_by: 0,
           hasAlarm: true,
           isFromAdmin: false
         }
-        this.auctionService.CreateOrder(2, order).subscribe(res => {
+        this.auctionService.CreateOrder(id, order).subscribe(res => {
           this.router.navigate(['alarm'])
         })
       }
@@ -50,7 +58,10 @@ this.alarms.splice(id, 1)
       }
     }
     else {
-      alert('set value mast be between ' + (this.current + 0.5) + ' and '+ (this.current - 0.5))
+      alert('set value mast be between ' + (+rate + 0.5) + ' and '+ (rate - 0.5))
     }
+  }
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
   }
 }

@@ -3,25 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="34d429f0-9ab0-40a7-a83b-8a99d6ebaf56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/common/interceptors/error-interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/common/interceptors/error-interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/common/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/common/services/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/common/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/common/services/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/alarm-blotter/alarm-blotter.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/explore/explore.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/explore/explore.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/explore/explore.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/explore/explore.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/explore/explore.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/explore/explore.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/order/order.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/order/order.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/order/order.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,7 +290,9 @@
       <workItem from="1627496829802" duration="5693000" />
       <workItem from="1627646334031" duration="5094000" />
       <workItem from="1629879187751" duration="33000" />
-      <workItem from="1630234052415" duration="10321000" />
+      <workItem from="1630234052415" duration="10442000" />
+      <workItem from="1630278563266" duration="2564000" />
+      <workItem from="1630879880449" duration="4591000" />
     </task>
     <servers />
   </component>

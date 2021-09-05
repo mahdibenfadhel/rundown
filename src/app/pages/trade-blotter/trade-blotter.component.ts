@@ -13,6 +13,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export class TradeBlotterComponent implements OnInit {
   orders = [];
+  ddv = [];
   filters = [];
   selectedOption = 'ALL';
   filteredOrders = [];
@@ -31,6 +32,7 @@ export class TradeBlotterComponent implements OnInit {
 
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
+        this.ddv.push({ddv: 0, nat: 0})
         if(!a.isFromAdmin && !a.hasAlarm) {
           this.filters.push(a.auction.currency)
         }
@@ -88,4 +90,9 @@ this.router.navigate(['alarm'])
   onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
   }
+  changeNat(index, order){
+    const diff = order.auction.rate_end.getTime() - order.auction.rate_start.getTime();
+    this.ddv[index].ddv = 0.0001 * this.ddv[index].nat * (diff/(1000*60*60*24))/365
+  }
+
 }

@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'sign-up', component: SignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'details', component: CardDetailsComponent },
-  { path: 'orders', component: TradeBottlerAdminComponent },
+  { path: 'orders', component: TradeBlotterComponent },
   { path: 'order', component: OrderComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: 'trade', component: TradeBlotterComponent },
+  { path: 'trade', component: TradeBottlerAdminComponent },
   { path: 'alarm', component: AlarmBlotterComponent },
   {
     path: '',
