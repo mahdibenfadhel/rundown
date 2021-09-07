@@ -224,3 +224,33 @@ button{
   background-color: $dark-blue !important;
   color: $white !important;
 }
+.closeIcon{
+  position: absolute;
+  right: 0;
+  z-index: 20;
+}
+.ddv{
+  width: 80%;
+  background-color: transparent;
+  font-size: $font-lgg;
+  color: $white;
+  font-weight: 800;
+  margin: 0;
+  text-align: center;
+}
+input, input:focus, textarea:focus, select:focus{
+  outline: none;
+  border: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

@@ -14,11 +14,12 @@ auctions = [];
   ngOnInit(): void {
     this.auctionService.getAuctions().subscribe(res => {
 res.forEach(a => {
-  a.auction_cutoff = new Date(Date.UTC(+a.auction_cutoff.split("-")[0], +a.auction_cutoff.split("-")[1], +a.auction_cutoff.split("-")[2]))
+  a.auction_cutoff = new Date(a.auction_cutoff)
   a.rate_end = new Date(Date.UTC(+a.rate_end.split("-")[0], +a.rate_end.split("-")[1], +a.rate_end.split("-")[2]))
   a.rate_start = new Date(Date.UTC(+a.rate_start.split("-")[0], +a.rate_start.split("-")[1], +a.rate_start.split("-")[2]))
-  this.auctions.push(a)
-})
+  if (!a.fromAdmin) {
+    this.auctions.push(a)
+  }})
       console.log(this.auctions)
     })
   }
