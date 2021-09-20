@@ -26,11 +26,11 @@ export class AlarmBlotterComponent implements OnInit {
         console.log(a)
         if(a.hasAlarm) {
           this.filters.push(a?.auction.currency)
+          a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
+          a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
+          a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
+          this.orders.push(a)
         }
-        a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
-        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
-        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
-        this.orders.push(a)
       })
       this.filters = this.filters.filter(this.onlyUnique)
       this.filteredOrders = this.orders.filter(e => e.hasAlarm);
@@ -69,8 +69,9 @@ export class AlarmBlotterComponent implements OnInit {
       this.filteredOrders = this.orders
     }
     else {
+      console.log(this.orders, this.filteredOrders)
       this.selectedOption = option;
-      this.filteredOrders = this.orders.filter(f => f.auction.currency === option)
+      this.filteredOrders = this.orders.filter(f => f.auction.currency === option && f.hasAlarm)
     }
   }
   deleteOrder(id){

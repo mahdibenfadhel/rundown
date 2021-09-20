@@ -24,10 +24,10 @@ export class AuctionService {
   }
   DeleteAllOrders(alarm?): Observable<any> {
     if (alarm) {
-      return this.apiService.delete('order/allOrderFromUser');
+      return this.apiService.delete('order/allAlarmFromUser');
     }
   else {
-      return this.apiService.delete('order/allAlarmFromUser');
+      return this.apiService.delete('order/allOrderFromUser');
     }
   }
   DeleteAllAlarms(): Observable<any> {

@@ -40,6 +40,19 @@
               </div>
             </div>
             <div class="row">
+              <div class="col-md flex">
+                <div class="row">
+                  <div class="bg-chart-secondary">
+                    <input type="number" class="rate" formControlName="notional">
+                    <p class="m-0 p-0">notional</p>
+                  </div>
+                  <div class="bg-chart-secondary">
+                    <p class="rate">{{registerForm.get('dv01').value | number: '1.0-4'}}</p>
+                    <p class="m-0 p-0">dv01</p>
+                  </div>                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md">
                 <div class="bg-chart-primary">
                   <h3><b>{{auction.currency}} DATES</b></h3>

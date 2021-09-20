@@ -32,7 +32,7 @@ export class TradeBlotterComponent implements OnInit {
 
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
-        this.ddv.push({ddv: 0, nat: 0})
+        this.ddv.push({ddv: a.dv01, nat: a.notional})
         if(!a.isFromAdmin && !a.hasAlarm) {
           this.filters.push(a.auction.currency)
         }
@@ -43,7 +43,7 @@ export class TradeBlotterComponent implements OnInit {
       })
       this.filters = this.filters.filter(this.onlyUnique)
       this.filteredOrders = this.orders.filter(e => !e.isFromAdmin && !e.hasAlarm);
-  })
+    })
   }
   deleteAll(){
     this.auctionService.DeleteAllOrders().subscribe();

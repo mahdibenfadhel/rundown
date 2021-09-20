@@ -61,9 +61,21 @@ registerForm: FormGroup;
         rate: [
           auctionC.rate_mid,
           Validators.compose([Validators.required, Validators.max(+this.max), Validators.min(this.min)])
+        ],
+        notional: [
+          0,
+          Validators.compose([Validators.required, Validators.min(0)])
+        ],
+        dv01: [
+          0,
+          Validators.compose([Validators.required, Validators.min(0)])
         ]
       }
     );
+    this.registerForm.get('notional').valueChanges.subscribe(v => {
+      const diff = new Date(this.auction.rate_end).getTime() - new Date(this.auction.rate_start).getTime();
+      this.registerForm.get('dv01').setValue(0.0001 * v * (diff/(1000*60*60*24))/365)
+    })
   }
   saveOrder(type){
   if (this.registerForm.valid)
@@ -75,12 +87,13 @@ registerForm: FormGroup;
         unit: "0",
         modified_by: 0,
         hasAlarm: false,
-        isFromAdmin: false
+        isFromAdmin: false,
+        dv01: Number(this.registerForm.value.dv01.toFixed(4)),
+        notional: this.registerForm.value.notional,
       }
       this.auctionService.CreateOrder(this.auction.id, order).subscribe(res => {
-        this.router.navigate(['trade'])
+        this.router.navigate(['orders'])
       })
     }
   }
-
 }
