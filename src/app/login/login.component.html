@@ -12,6 +12,7 @@
         </ul>
       </h2> </div>
       <div class="card-content">
+        <p *ngIf="error" class="red">Wrong email or password !</p>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="row">
         <div class="col-md-12">

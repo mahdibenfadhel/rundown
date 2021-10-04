@@ -9,6 +9,9 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 auctions = [];
+  filters = [];
+  selectedOption = 'ALL';
+  filteredOrders = [];
   constructor(private auctionService: AuctionService, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,8 +22,14 @@ res.forEach(a => {
   a.rate_start = new Date(Date.UTC(+a.rate_start.split("-")[0], +a.rate_start.split("-")[1], +a.rate_start.split("-")[2]))
   if (!a.fromAdmin) {
     this.auctions.push(a)
+    this.filters.push(a.currency)
+    this.filteredOrders = this.auctions;
+
   }})
-      console.log(this.auctions)
+      this.auctions.sort(function (a, b) {
+        return b.auction_cutoff - a.auction_cutoff;
+      });
+      this.filters = this.filters.filter(this.onlyUnique)
     })
   }
   navigateToDetail(auction){
@@ -28,5 +37,22 @@ this.router.navigate(['/details'], {queryParams: {auction: JSON.stringify(auctio
   }
   navigateToOrder(auction){
 this.router.navigate(['/order'], {queryParams: {auction: JSON.stringify(auction)}})
+  }
+
+  onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
+  filter(option){
+    if (option === 'ALL')
+    {
+      this.filteredOrders = this.auctions
+      this.selectedOption = option;
+
+    }
+    else {
+      this.selectedOption = option;
+      this.filteredOrders = this.auctions.filter(f => f.currency === option)
+    }
   }
 }

@@ -65,3 +65,15 @@ h3{
 .bg-transparent{
   border: 1px solid $white;
 }
+td, th {
+  width: 70px;
+  text-align: center;
+  border: 1px solid $dark-blue;
+  padding: 15px 0;
+  color: $dark-blue;
+  font-size: $font-md;
+}
+th:hover{
+  background-color: $dark-blue;
+  color: $white;
+}

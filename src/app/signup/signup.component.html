@@ -15,12 +15,20 @@
     <div class="card-content mt-0">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <h4>Email: </h4>
             <mat-form-field appearance="outline">
               <input matInput placeholder="Email" formControlName="login">
               <mat-icon matSuffix *ngIf="loginForm.get('login').errors && loginForm.get('login').touched">error</mat-icon>
               <mat-error  *ngIf="loginForm.get('login').errors && loginForm.get('login').touched">something is wrong</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <h4>Name: </h4>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-icon matSuffix *ngIf="loginForm.get('name').errors && loginForm.get('name').touched">error</mat-icon>
+              <mat-error  *ngIf="loginForm.get('name').errors && loginForm.get('name').touched">something is wrong</mat-error>
             </mat-form-field>
           </div>
           <div class="col-md-12">

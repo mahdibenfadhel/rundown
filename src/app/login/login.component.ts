@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  error: boolean = false;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
      this.loginForm.markAllAsTouched()
    }
    else {
+     this.error = false;
  const cred = {
    email: this.loginForm.value.login,
    password: this.loginForm.value.password
@@ -33,7 +35,8 @@ export class LoginComponent implements OnInit {
  this.userService.login(cred).subscribe( res => {
    this.userService.setAuth(res.user, res.accessToken)
    this.router.navigate(['/home'])
- });
+ },
+   error => this.error = true);
    }
   }
 }

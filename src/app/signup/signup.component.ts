@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       login: new FormControl(null, Validators.compose([Validators.required, Validators.email])),
+      name: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
       confirmPassword: new FormControl(null, Validators.required),
     },
@@ -33,7 +34,7 @@ export class SignupComponent implements OnInit {
     else {
       const cred = {
         email: this.loginForm.value.login,
-        name: 'new',
+        name: this.loginForm.value.name,
         company: 'new',
         gui_version: 'new',
         last_action: new Date(),

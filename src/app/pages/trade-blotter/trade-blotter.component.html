@@ -23,7 +23,7 @@
           <div class="card-content">
             <div class="row">
               <mat-icon class="closeIcon" (click)="deleteOrder(order.id)">close</mat-icon>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <h1>{{order.auction.currency}}</h1>
                 <h2 class="date">{{order.auction.rate_start | date: 'MMM'}}</h2>
                 <div class="bg-green" *ngIf="order.direction === 'rec'">
@@ -33,7 +33,7 @@
                   <h1>P</h1>
                 </div>
               </div>
-              <div class="col-md-10">
+              <div class="col-md-9">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="bg-chart-primary">
@@ -59,7 +59,7 @@
                   </div>
                   <div class="col-md-3 pr-3">
                     <div class="bg-chart-primary">
-                      <h2>start Date</h2>
+                      <h2>Start date</h2>
                       <p class="float-left">{{order.auction.rate_start | date: 'dd-MMM-yyyy'}}</p>
                       <br>
                     </div>
@@ -68,16 +68,16 @@
                 <div class="row">
                   <div class="col-md-2">
                     <div class="bg-chart-secondary">
-                      <h2 style="white-space: nowrap">{{order.rate}}</h2>
+                      <h2 style="white-space: nowrap" class="mx-0 p-0">{{order.rate}}</h2>
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <div class="bg-dark-blue">
                       <p><b>size of Dv01:</b></p>
-                        <h2>{{ddv[i].ddv | number : '1.0-3'}}</h2>
+                        <h2 class="m-0 p-0">{{ddv[i].ddv | number : '1.0-3'}}</h2>
                     </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <div class="bg-dark-blue">
                       <p><b>Notional*:</b></p>
                       <h2 class="p-0 m-0">
@@ -85,15 +85,15 @@
                       </h2>
                     </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <div class="bg-light-green">
                       <p><b>Status</b></p>
                       <h2>Working auction</h2>
                     </div>
                   </div>
-                  <div class="col-md-3  pr-3">
+                  <div class="col-md-2  pr-3">
                     <div class="bg-chart-primary">
-                      <h2>End Date</h2>
+                      <h2>End date</h2>
                       <p>{{order.auction.rate_end | date: 'dd-MMM-yyyy'}}</p>
                     </div>
                   </div>

@@ -67,6 +67,7 @@ export class AlarmBlotterComponent implements OnInit {
     if (option === 'ALL')
     {
       this.filteredOrders = this.orders
+      this.selectedOption = option;
     }
     else {
       console.log(this.orders, this.filteredOrders)

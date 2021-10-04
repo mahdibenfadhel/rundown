@@ -24,6 +24,7 @@ h2{
   margin: auto;
 }
 .bg-dark-blue{
+  height: 100%;
   background-color: $dark-blue;
   color: $white;
   font-size: $font-sm;
@@ -42,11 +43,13 @@ h2{
   color: $dark-blue;
   font-size: $font-xs;
   height: 100%;
+
   h2{
     margin: 15px;
   }
 }
 .bg-chart-secondary2{
+  height: 100%;
   background-color: $light-grey;
   color: $dark-blue;
   font-size: $font-md;
@@ -65,7 +68,7 @@ h3{
   text-align: left;
 }
 .bg-green{
-  height: 50px;
+  height: 100%;
   background-color: $green;
   border-radius: 6px;
   h1{
@@ -80,6 +83,7 @@ h3{
   }
 }
 .bg-light-green{
+  height: 100%;
   background-color: $light-green;
   border-radius: 6px;
   p{
@@ -90,7 +94,7 @@ h3{
   }
   h2{
     color: $dark-blue;
-    font-size: $font-lg;
+    font-size: $font-sm;
     text-align: left;
   }
 }
@@ -127,6 +131,7 @@ h3{
   place-content: space-between;
 }
 .bg-chart-primary{
+  height: 100%;
   background-color: $light-grey;
   color: $dark-blue;
   h2{
@@ -203,7 +208,7 @@ button{
 .bg-dark-blue-btn{
   background-color: $dark-blue;
 }
-.col-md-10 .row div{
+.col-md-9 .row div{
   padding: 3px;
   border-radius: 6px;
 }
@@ -214,6 +219,7 @@ button{
   }
   .bg-dark-blue{
     border: solid 1px $white;
+    height: 100%;
   }
 }
 
@@ -230,7 +236,7 @@ button{
   z-index: 20;
 }
 .ddv{
-  width: 80%;
+  width: 100%;
   background-color: transparent;
   font-size: $font-lgg;
   color: $white;

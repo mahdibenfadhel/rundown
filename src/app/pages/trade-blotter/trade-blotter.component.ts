@@ -75,6 +75,8 @@ this.router.navigate(['alarm'])
     if (option === 'ALL')
     {
       this.filteredOrders = this.orders
+      this.selectedOption = option;
+
     }
     else {
       this.selectedOption = option;

@@ -16,10 +16,10 @@ export class ExploreComponent implements OnInit {
   constructor( private auctionService: AuctionService, private router: Router) { }
 
   ngOnInit(): void {
-    this.auctionService.getOrders().subscribe(res => {
-      res.data.forEach(a => {
-        if(!a.isFromAdmin && !a.hasAlarm) {
-          this.filters.push({type: a.auction.currency, id: a.auction.id, date: a.auction.rate_end, rate: a.auction.rate_mid})
+    this.auctionService.getAuctions().subscribe(res => {
+      res.forEach(a => {
+        if(!a.fromAdmin) {
+          this.filters.push({type: a.currency, id: a.id, date: a.rate_end, rate: a.rate_mid})
         }
       })
     })
