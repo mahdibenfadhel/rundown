@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 auctions = [];
+today = new Date();
   filters = [];
   selectedOption = 'ALL';
   filteredOrders = [];

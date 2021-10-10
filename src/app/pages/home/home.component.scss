@@ -44,6 +44,11 @@ h3{
 }
 .bg-green{
   background-color: $green;
+  cursor: pointer;
+}
+.bg-grey{
+  background-color: gray;
+  cursor: not-allowed;
 }
 
 .order{
