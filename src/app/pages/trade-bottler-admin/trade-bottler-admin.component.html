@@ -61,35 +61,37 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-md-4">
                     <div class="bg-chart-secondary">
                       <h2 style="white-space: nowrap" class="mx-0 p-0">{{order.rate}}</h2>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="bg-dark-blue">
-                      <p><b>size of Dv01:</b></p>
-                      <h2 class="m-0 p-0">{{ddv[i].ddv | number : '1.0-0'}}</h2>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="bg-dark-blue">
-                      <p><b>Notional:</b></p>
-                      <h2 class="p-0 m-0">
-                        <input readonly type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">
-                      </h2>
-                    </div>
-                  </div>
-                  <div class="col-md-2">
+                  <div class="col-md-4">
                     <div class="bg-light-green">
                       <p><b>Status</b></p>
                       <h2>Working auction</h2>
                     </div>
                   </div>
-                  <div class="col-md-2  pr-3">
+                  <div class="col-md-4  pr-3">
                     <div class="bg-chart-primary">
                       <h2>End date</h2>
                       <p>{{order.auction.rate_end | date: 'dd-MMM-yyyy'}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="bg-dark-blue mr-2">
+                      <p><b>size of Dv01:</b></p>
+                      <h2 class="m-0 p-0">{{ddv[i].ddv | number : '1.0-0'}}</h2>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="bg-dark-blue">
+                      <p><b>Notional:</b></p>
+                      <h2 class="p-0 m-0">
+                        <input readonly type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">
+                      </h2>
                     </div>
                   </div>
                 </div>

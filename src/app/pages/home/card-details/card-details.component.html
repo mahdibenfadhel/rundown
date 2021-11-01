@@ -43,11 +43,12 @@
               <div class="col-md flex">
                 <div class="row">
                   <div class="bg-chart-secondary">
-                    <input type="number" class="rate" formControlName="notional">
+                    <input type="number" class="rate" formControlName="notional" style="color: transparent; background-color: transparent; position:relative; top: 10px">
+                    <p class="rate">{{registerForm.get('notional').value | number: '1.0-0'}}</p>
                     <p class="m-0 p-0">notional</p>
                   </div>
                   <div class="bg-chart-secondary">
-                    <p class="rate">{{registerForm.get('dv01').value | number: '1.0-4'}}</p>
+                    <p class="rate">{{registerForm.get('dv01').value | number: '1.0-0'}}</p>
                     <p class="m-0 p-0">dv01</p>
                   </div>                </div>
               </div>
@@ -74,7 +75,7 @@
         </form>
       </div>
       <div class="col-md detail">
-        <h2 class="mb-4">Parameters({{auction.currency}}, first trade below)</h2>
+        <h2 class="mb-4">Parameters</h2>
         <table>
           <tbody>
           <tr>

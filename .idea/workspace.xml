@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="34d429f0-9ab0-40a7-a83b-8a99d6ebaf56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/card-details/card-details.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-blotter/trade-blotter.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/trade-bottler-admin/trade-bottler-admin.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +301,11 @@
       <workItem from="1633422921800" duration="40000" />
       <workItem from="1633889780348" duration="953000" />
       <workItem from="1634142021850" duration="931000" />
-      <workItem from="1634210078849" duration="625000" />
+      <workItem from="1634210078849" duration="683000" />
+      <workItem from="1634227165625" duration="601000" />
+      <workItem from="1635152153948" duration="760000" />
+      <workItem from="1635703564007" duration="2149000" />
+      <workItem from="1635756175066" duration="1907000" />
     </task>
     <servers />
   </component>
