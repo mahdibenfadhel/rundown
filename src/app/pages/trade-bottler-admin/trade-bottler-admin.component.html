@@ -81,13 +81,13 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="bg-dark-blue mr-2">
+                    <div class="bg-dark-blue ">
                       <p><b>size of Dv01:</b></p>
                       <h2 class="m-0 p-0">{{ddv[i].ddv | number : '1.0-0'}}</h2>
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="bg-dark-blue">
+                    <div class="bg-dark-blue mr-3">
                       <p><b>Notional:</b></p>
                       <h2 class="p-0 m-0">
                         <input readonly type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">

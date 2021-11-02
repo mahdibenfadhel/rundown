@@ -95,5 +95,6 @@ registerForm: FormGroup;
         this.router.navigate(['orders'])
       })
     }
+  console.log(this.registerForm)
   }
 }

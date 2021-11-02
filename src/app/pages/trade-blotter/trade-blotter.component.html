@@ -92,11 +92,10 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="bg-dark-blue mr-2">
+                    <div class="bg-dark-blue mr-3">
                       <p><b>Notional*:</b></p>
-                      <h2 class="p-0 m-0">
-                        <input type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">
-                      </h2>
+                      <h2 class="ddv">{{ddv[i].nat | number: '1.0-0'}}</h2>
+                      <input style="position: relative;top: -40px; color: transparent" type="number" class="ddv p-0 m-0"   [(ngModel)]="ddv[i].nat" (ngModelChange)="changeNat(i, order)">
                     </div>
                   </div>
                 </div>
