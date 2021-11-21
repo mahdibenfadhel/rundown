@@ -3,6 +3,7 @@ import {AuctionService} from "../../common/services/auction.service";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {UserService} from "../../common/services/user.service";
 
 @Component({
   selector: 'app-trade-blotter',
@@ -13,6 +14,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export class TradeBlotterComponent implements OnInit {
   orders = [];
+  user = [];
   ddv = [];
   filters = [];
   selectedOption = 'ALL';
@@ -25,6 +27,7 @@ export class TradeBlotterComponent implements OnInit {
 ) { }
 
   ngOnInit(): void {
+
     this.orders = [];
     this.selectedOption = 'ALL';
     this.filteredOrders = [];
@@ -37,8 +40,8 @@ export class TradeBlotterComponent implements OnInit {
           this.filters.push(a.auction.currency)
         }
         a.auction.auction_cutoff = new Date(a.auction.auction_cutoff);
-        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
-        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
+        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1] - 1, +a.auction.rate_end.split("-")[2]))
+        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1] - 1, +a.auction.rate_start.split("-")[2]))
         this.orders.push(a)
       })
       this.filters = this.filters.filter(this.onlyUnique)

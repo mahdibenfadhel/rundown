@@ -3,6 +3,7 @@ import {AuctionService} from "../../common/services/auction.service";
 import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {MatDialog} from "@angular/material/dialog";
+import {UserService} from "../../common/services/user.service";
 
 @Component({
   selector: 'app-trade-bottler-admin',
@@ -11,6 +12,7 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class TradeBottlerAdminComponent implements OnInit {
   orders = [];
+  user ;
   ddv = [];
   filters = [];
   selectedOption = 'ALL';
@@ -18,20 +20,23 @@ export class TradeBottlerAdminComponent implements OnInit {
   closeResult = '';
 
   constructor(private auctionService: AuctionService, private router: Router,
-              private modalService: NgbModal,
+              private userService: UserService,
               public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    this.user = this.userService.getCurrentUser();
     this.auctionService.getAdminOrders().subscribe(res => {
-      res.data.forEach(a => {
+      let os = res.data.filter(e => (e.isFromAdmin) && (e.user.id === this.user.id));
+      console.log(os, this.user.id)
+      os.forEach(a => {
         this.ddv.push({ddv: a.dv01, nat: a.notional})
         if(a.isFromAdmin) {
           this.filters.push(a.auction.currency)
         }
         a.auction.auction_cutoff = new Date(a.auction.auction_cutoff);
-        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
-        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
+        a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1] - 1, +a.auction.rate_end.split("-")[2]))
+        a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1] - 1, +a.auction.rate_start.split("-")[2]))
         this.orders.push(a)
       })
       this.filters = this.filters.filter(this.onlyUnique)
