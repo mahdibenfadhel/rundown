@@ -19,7 +19,7 @@ export class ExploreComponent implements OnInit {
     this.auctionService.getAuctions().subscribe(res => {
       res.forEach(a => {
         if(!a.fromAdmin) {
-          this.filters.push({type: a.currency, id: a.id, date: a.rate_end, rate: a.rate_mid})
+          this.filters.push({type: a.currency, id: a.id, date: a.auction_cutoff, rate: a.rate_mid})
         }
       })
     })
