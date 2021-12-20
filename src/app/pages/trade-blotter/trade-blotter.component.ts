@@ -45,7 +45,8 @@ export class TradeBlotterComponent implements OnInit {
         this.orders.push(a)
       })
       this.filters = this.filters.filter(this.onlyUnique)
-      this.filteredOrders = this.orders.filter(e => !e.isFromAdmin && !e.hasAlarm);
+      this.orders = this.orders.filter(e => !e.isFromAdmin && !e.hasAlarm);
+      this.filteredOrders = this.orders;
     })
   }
   deleteAll(){

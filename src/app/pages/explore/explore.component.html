@@ -5,14 +5,7 @@
       <div *ngFor="let a of filters; let i = index" class="col-md-3">
         <div class="card text-center">
           <div class="card-content">
-            <div class="row">
-              <div class="col">
-                <p class="desc" (click)="deleteAlarm(i)">Cancel
-                  <mat-icon>close</mat-icon>
-                </p>
-              </div>
-            </div>
-            <div class="row">
+              <div class="row">
               <div class="col">
                 <h1>{{a.type}}</h1>
                 <h2 class="date">{{a.date | date: 'MMM-dd'}}</h2>

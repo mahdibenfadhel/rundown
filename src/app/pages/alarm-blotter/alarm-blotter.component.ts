@@ -23,12 +23,9 @@ export class AlarmBlotterComponent implements OnInit {
     this.filteredOrders = [];
     this.auctionService.getOrders().subscribe(res => {
       res.data.forEach(a => {
-        console.log(a)
+        a.auction.auction_cutoff = new Date(a.auction.auction_cutoff)
         if(a.hasAlarm) {
           this.filters.push(a?.auction.currency)
-          a.auction.auction_cutoff = new Date(Date.UTC(+a.auction.auction_cutoff.split("-")[0], +a.auction.auction_cutoff.split("-")[1], +a.auction.auction_cutoff.split("-")[2]))
-          a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1], +a.auction.rate_end.split("-")[2]))
-          a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1], +a.auction.rate_start.split("-")[2]))
           this.orders.push(a)
         }
       })
@@ -53,6 +50,13 @@ export class AlarmBlotterComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+  openOne(content, id) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReasonOne(reason, id)}`;
+    });
+  }
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -61,6 +65,15 @@ export class AlarmBlotterComponent implements OnInit {
       return 'by clicking on a backdrop';
     } else {
       this.deleteAll()
+    }
+  }
+  private getDismissReasonOne(reason: any, id): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      this.deleteOrder(id)
     }
   }
   filter(option){
