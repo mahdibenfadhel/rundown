@@ -19,12 +19,15 @@ export class ExploreComponent implements OnInit {
     this.auctionService.getAuctions().subscribe(res => {
       res.forEach(a => {
         if(!a.fromAdmin) {
+          a.auction_cutoff = a.auction_cutoff.substring(0, a.auction_cutoff.length - 1);
+          a.auction_cutoff = new Date(a.auction_cutoff);
           this.filters.push({type: a.currency, id: a.id, date: a.auction_cutoff, rate: a.rate_mid})
         }
       })
       this.filters.sort(function (a, b) {
-        return b.auction_cutoff - a.auction_cutoff;
+        return b.date - a.date;
       });
+      console.log(this.filters)
     })
   }
   deleteAlarm(id){
