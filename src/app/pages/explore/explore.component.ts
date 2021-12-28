@@ -22,6 +22,9 @@ export class ExploreComponent implements OnInit {
           this.filters.push({type: a.currency, id: a.id, date: a.auction_cutoff, rate: a.rate_mid})
         }
       })
+      this.filters.sort(function (a, b) {
+        return b.auction_cutoff - a.auction_cutoff;
+      });
     })
   }
   deleteAlarm(id){
