@@ -39,6 +39,7 @@ export class TradeBlotterComponent implements OnInit {
         if(!a.isFromAdmin && !a.hasAlarm) {
           this.filters.push(a.auction.currency)
         }
+        a.auction.auction_cutoff =  a.auction.auction_cutoff.substring(0,  a.auction.auction_cutoff - 1);
         a.auction.auction_cutoff = new Date(a.auction.auction_cutoff);
         a.auction.rate_end = new Date(Date.UTC(+a.auction.rate_end.split("-")[0], +a.auction.rate_end.split("-")[1] - 1, +a.auction.rate_end.split("-")[2]))
         a.auction.rate_start = new Date(Date.UTC(+a.auction.rate_start.split("-")[0], +a.auction.rate_start.split("-")[1] - 1, +a.auction.rate_start.split("-")[2]))
